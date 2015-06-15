@@ -1,6 +1,6 @@
 /*
  * @title Concat
- * @description A task concatenate and compress js files
+ * @description A task to concatenate and compress js files
  * @example (cli) gulp concat
  */
 
