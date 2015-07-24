@@ -5,7 +5,8 @@
   "repository": "https://github.com/antonsamper/gulp-boilerplate",
   "description": "gulp.js Boilerplate",
   "scripts": {
-    "test": "gulp karma"
+    "test": "gulp karma",
+    "postinstall": "bower i"
   },
   "devDependencies": {
     "bower": "1.4.1",
