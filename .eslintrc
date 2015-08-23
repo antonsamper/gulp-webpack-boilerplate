@@ -4,6 +4,6 @@
     "quotes": [2, "single"],
     "block-scoped-var": 2,
     "one-var": [2, "never"],
-    "brace-style": [2, "stroustrup", { "allowSingleLine": true }]
+    "brace-style": [2, "1tbs", { "allowSingleLine": false }]
   }
 }
