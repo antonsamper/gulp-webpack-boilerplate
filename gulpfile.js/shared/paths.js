@@ -21,8 +21,7 @@ module.exports = {
     'package.json',
     'bower.json',
     'gulpfile.js',
-    '.jshintrc',
-    '.jscsrc'
+    '.eslintrc'
   ],
   concatSrc: [
     'src/js/**/*.js',
