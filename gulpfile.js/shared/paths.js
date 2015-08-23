@@ -16,7 +16,7 @@ module.exports = {
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css',
-  jshintSrc: [
+  eslintSrc: [
     'src/js/**/*.js',
     'package.json',
     'bower.json',
