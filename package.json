@@ -38,12 +38,11 @@
     "gulp-util": "3.0.6",
     "jasmine-core": "2.3.4",
     "karma": "0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
     "karma-coverage": "0.5.2",
     "karma-jasmine": "0.3.6",
-    "karma-phantomjs-launcher": "0.2.1",
     "karma-spec-reporter": "0.0.20",
     "main-bower-files": "2.9.0",
-    "phantomjs": "1.9.18",
     "require-dir": "0.3.0",
     "run-sequence": "1.1.3"
   }
