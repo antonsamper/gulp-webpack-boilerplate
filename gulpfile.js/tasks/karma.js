@@ -10,7 +10,7 @@
  *********************************************************************************/
 
 var gulp = require('gulp');
-var karma = require('karma').server;
+var Server = require('karma').Server;
 
 
 /*********************************************************************************
@@ -18,8 +18,12 @@ var karma = require('karma').server;
  *********************************************************************************/
 
 gulp.task('karma', function () {
-  return karma.start({
+
+  var server = new Server({
     configFile: __dirname + '/../config/karma.js',
     singleRun: process.env.ENVIRONMENT_TYPE !== 'dev'
   });
+
+  return server.start();
+
 });
