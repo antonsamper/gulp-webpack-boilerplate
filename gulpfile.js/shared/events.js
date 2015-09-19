@@ -5,20 +5,12 @@
 
 
 /*********************************************************************************
- 1. DEPENDENCIES
- *********************************************************************************/
-
-var gutil = require('gulp-util');
-
-
-/*********************************************************************************
- 2. EXPORTS
+ 1. EXPORTS
  *********************************************************************************/
 
 module.exports = {
   onError: function (err) {
-    gutil.log(gutil.colors.red(err.plugin) + ': ' + gutil.colors.yellow(err.message));
-    gutil.beep();
+    console.error(err.plugin, err.message);
     this.emit('end');
   }
 };
