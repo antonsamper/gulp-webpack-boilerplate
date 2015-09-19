@@ -32,7 +32,7 @@ module.exports = function (config) {
     basePath: basePath,
     frameworks: ['jasmine'],
     files: files,
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
     preprocessors: {
       'src/js/**/!(*spec).js': ['coverage']
     },
