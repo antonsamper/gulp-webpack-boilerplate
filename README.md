@@ -6,8 +6,8 @@
 # gulp.js starter for single page apps
 A clean and simple starter boilerplate for single page applications using gulp.js.
 
-[![MIT License][license-badge]][license-link]
-[![Build Status][travis-badge]][travis-link]
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
+[![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
 
 ###### Boilerplate variations
 - [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
@@ -111,8 +111,3 @@ This boilerplate supports bower components. The components are installed in the 
 
 ### SASS
 This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
-
-[license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg
-[license-link]: https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE
-[travis-badge]: https://img.shields.io/travis/antonsamper/gulp-boilerplate/master.svg
-[travis-link]: https://travis-ci.org/antonsamper/gulp-boilerplate
