@@ -32,7 +32,7 @@ module.exports = function (config) {
     basePath: basePath,
     frameworks: ['jasmine'],
     files: files,
-    browsers: ['Firefox'],
+    browsers: ['PhantomJS'],
     preprocessors: {
       'src/js/**/!(*spec).js': ['coverage']
     },
