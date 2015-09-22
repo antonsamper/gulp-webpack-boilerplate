@@ -25,7 +25,7 @@ import sourcemaps from 'gulp-sourcemaps';
 
 gulp.task('sass', () => {
   return gulp
-    .src(`./${ sharedPaths.srcDir }/sass/*.scss`)
+    .src(`${ sharedPaths.srcDir }/sass/*.scss`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(sass())

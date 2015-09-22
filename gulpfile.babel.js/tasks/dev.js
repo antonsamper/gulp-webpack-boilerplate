@@ -9,19 +9,17 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var browserSync = require('browser-sync');
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var sharedPaths = require('../shared/paths.js');
+import browserSync from 'browser-sync';
+import runSequence from 'run-sequence';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('dev', function () {
+gulp.task('dev', () => {
 
-  process.env.ENVIRONMENT_TYPE = 'dev';
+  global.options.env = 'dev';
 
   runSequence(
     'karma',
@@ -35,11 +33,11 @@ gulp.task('dev', function () {
     'browserSync'
   );
 
-  gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
-  gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(sharedPaths.eslintSrc, ['eslint']);
   gulp.watch(sharedPaths.concatSrc, ['concat']);
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
+  gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
+  gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['sass']);
 
 });
