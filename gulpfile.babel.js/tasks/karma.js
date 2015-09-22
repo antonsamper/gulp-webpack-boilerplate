@@ -9,19 +9,18 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var gulp = require('gulp');
-var Server = require('karma').Server;
+import karma from 'karma';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('karma', function () {
+gulp.task('karma', () => {
 
-  var server = new Server({
-    configFile: __dirname + '/../config/karma.js',
-    singleRun: process.env.ENVIRONMENT_TYPE !== 'dev'
+  let server = new karma.Server({
+    configFile: `${__dirname}/../config/karma.js`,
+    singleRun: options.env !== 'dev'
   });
 
   return server.start();

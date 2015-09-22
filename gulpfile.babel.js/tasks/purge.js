@@ -9,15 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var del = require('del');
-var gulp = require('gulp');
-var sharedPaths = require('../shared/paths.js');
+import del from 'del';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('purge', function () {
+gulp.task('purge', () => {
   del([sharedPaths.outputDir]);
 });

@@ -1,37 +1,21 @@
 /*
  * @title Move
- * @description A task move src files to the dist folder
+ * @description A task to move font files to the dist folder
  * @example (cli) gulp move
  */
 
 
 /*********************************************************************************
- 1. DEPENDENCIES
+ 1. TASK
  *********************************************************************************/
 
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sharedPaths = require('../shared/paths.js');
-var sharedEvents = require('../shared/events.js');
-
-
-/*********************************************************************************
- 2. TASK
- *********************************************************************************/
-
-gulp.task('move', function () {
-
-  var files = [
-    './' + sharedPaths.srcDir + '/fonts/*.{eot,svg,ttf,woff}'
-  ];
+gulp.task('move', () => {
 
   return gulp
-    .src(files, {
-      base: './' + sharedPaths.srcDir
+    .src(`./${ sharedPaths.srcDir }/fonts/*.{eot,svg,ttf,woff}`, {
+      base: `./${ sharedPaths.srcDir }`
     })
-    .pipe(plumber({
-      errorHandler: sharedEvents.onError
-    }))
-    .pipe(gulp.dest(sharedPaths.outputDir))
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulp.dest(sharedPaths.outputDir));
 
 });
