@@ -10,6 +10,7 @@
     "postinstall": "bower i"
   },
   "devDependencies": {
+    "babel": "5.8.23",
     "bower": "1.5.2",
     "browser-sync": "2.9.3",
     "chalk": "1.1.1",
