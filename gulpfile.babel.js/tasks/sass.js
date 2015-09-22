@@ -9,36 +9,30 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync');
-var csso = require('gulp-csso');
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var plumber = require('gulp-plumber');
-var rev = require('gulp-rev');
-var sass = require('gulp-sass');
-var sharedPaths = require('../shared/paths.js');
-var sharedEvents = require('../shared/events.js');
-var size = require('gulp-size');
-var sourcemaps = require('gulp-sourcemaps');
+import autoprefixer from 'gulp-autoprefixer';
+import browserSync from 'browser-sync';
+import csso from 'gulp-csso';
+import gulpif from 'gulp-if';
+import rev from 'gulp-rev';
+import sass from 'gulp-sass';
+import size from 'gulp-size';
+import sourcemaps from 'gulp-sourcemaps';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp
-    .src([sharedPaths.srcDir + '/sass/*.scss'])
-    .pipe(plumber({
-      errorHandler: sharedEvents.onError
-    }))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.init()))
+    .src(`./${ sharedPaths.srcDir }/sass/*.scss`)
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(sass())
     .pipe(autoprefixer({browsers: ['last 2 versions']}))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.write()))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', csso()))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
+    .pipe(gulpif(options.env === 'dev', sourcemaps.write()))
+    .pipe(gulpif(options.env !== 'dev', csso()))
+    .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(sharedPaths.outputDir + '/css'))
     .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
