@@ -6,7 +6,7 @@
   "repository": "https://github.com/antonsamper/gulp-boilerplate",
   "description": "gulp.js Boilerplate",
   "scripts": {
-    "test": "gulp karma",
+    "test": "karma start gulpfile.babel.js/config/karma.js --single-run",
     "postinstall": "bower i"
   },
   "devDependencies": {
