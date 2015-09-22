@@ -24,12 +24,13 @@ gulp.task('dev', function () {
   process.env.ENVIRONMENT_TYPE = 'dev';
 
   runSequence(
+    'karma',
     'purge',
     'iconfont',
     'sass',
     'eslint',
     'concat',
-    ['karma', 'minifyHtml', 'imagemin'],
+    ['minifyHtml', 'imagemin'],
     'move',
     'browserSync'
   );

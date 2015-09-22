@@ -19,12 +19,13 @@ var runSequence = require('run-sequence');
 
 gulp.task('default', function () {
   runSequence(
+    'karma',
     'purge',
     'iconfont',
     'sass',
     'eslint',
     'concat',
-    ['karma', 'minifyHtml', 'imagemin'],
+    ['minifyHtml', 'imagemin'],
     'revReplace',
     'move'
   );
