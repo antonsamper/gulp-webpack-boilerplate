@@ -29,7 +29,7 @@ gulp.task('revReplaceManifest', () => {
 });
 
 gulp.task('revDeleteManifest', () => {
-  del(manifest);
+  return del.sync(manifest);
 });
 
 gulp.task('revReplace', () => {

@@ -17,5 +17,5 @@ import del from 'del';
  *********************************************************************************/
 
 gulp.task('clean', () => {
-  del(sharedPaths.outputDir);
 });
+  return del.sync(sharedPaths.outputDir);
