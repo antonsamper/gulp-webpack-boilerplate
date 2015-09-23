@@ -18,8 +18,8 @@ var sharedPaths = require('../shared/paths.js');
 
 module.exports = function (config) {
 
-  var basePath = __dirname + '/../..';
-  var files = bowerFiles({
+  const basePath = `${__dirname}/../..`;
+  const files = bowerFiles({
     paths: {
       bowerDirectory: basePath + '/bower_components',
       bowerJson: basePath + '/bower.json'

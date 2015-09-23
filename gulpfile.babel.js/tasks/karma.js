@@ -18,7 +18,7 @@ import karma from 'karma';
 
 gulp.task('karma', () => {
 
-  let server = new karma.Server({
+  const server = new karma.Server({
     configFile: `${__dirname}/../config/karma.js`,
     singleRun: options.env !== 'dev'
   });
