@@ -23,7 +23,7 @@ gulp.task('dev', () => {
 
   runSequence(
     'karma',
-    'purge',
+    'clean',
     'iconfont',
     'sass',
     'eslint',

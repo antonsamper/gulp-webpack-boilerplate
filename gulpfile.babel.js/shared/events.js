@@ -9,7 +9,7 @@
  *********************************************************************************/
 
 module.exports = {
-  onError: function (err) {
+  onError: err => {
     console.error(err.plugin, err.message);
     this.emit('end');
   }

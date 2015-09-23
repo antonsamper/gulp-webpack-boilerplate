@@ -1,7 +1,7 @@
 /*
- * @title Purge
+ * @title Clean
  * @description A task to delete the output directory
- * @example (cli) gulp purge
+ * @example (cli) gulp clean
  */
 
 
@@ -16,6 +16,6 @@ import del from 'del';
  2. TASK
  *********************************************************************************/
 
-gulp.task('purge', () => {
+gulp.task('clean', () => {
   del(sharedPaths.outputDir);
 });

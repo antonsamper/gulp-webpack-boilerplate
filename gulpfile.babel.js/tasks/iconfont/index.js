@@ -19,7 +19,7 @@ import size from 'gulp-size';
  2. TASK
  *********************************************************************************/
 
-gulp.task('iconfont', function () {
+gulp.task('iconfont', () => {
   return gulp
     .src(sharedPaths.srcIconFont)
     .pipe(size({showFiles: true}))

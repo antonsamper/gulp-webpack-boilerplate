@@ -23,7 +23,7 @@ module.exports = codepoints => {
   return gulp
     .src(`${__dirname}${scssTemplate}`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(data(function () {
+    .pipe(data(() => {
       return {
         icons: codepoints.map(icon => {
           return {

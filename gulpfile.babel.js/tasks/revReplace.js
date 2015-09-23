@@ -28,13 +28,13 @@ gulp.task('revReplaceManifest', () => {
     .pipe(gulp.dest(sharedPaths.outputDir));
 });
 
-gulp.task('revPurgeManifest', () => {
+gulp.task('revDeleteManifest', () => {
   del(manifest);
 });
 
 gulp.task('revReplace', () => {
   runSequence(
     'revReplaceManifest',
-    'revPurgeManifest'
+    'revDeleteManifest'
   );
 });

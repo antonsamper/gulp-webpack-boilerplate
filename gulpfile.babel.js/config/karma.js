@@ -8,15 +8,14 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var bowerFiles = require('main-bower-files');
-var sharedPaths = require('../shared/paths.js');
+import bowerFiles from 'main-bower-files';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-module.exports = function (config) {
+module.exports = config => {
 
   const basePath = `${__dirname}/../..`;
   const files = bowerFiles({
@@ -41,7 +40,7 @@ module.exports = function (config) {
       reporters: [{
         type: 'html',
         dir: sharedPaths.outputDir + '/reports/coverage/',
-        subdir: function (browser) {
+        subdir: browser => {
           return browser.toLowerCase().split(/[ /-]/)[0];
         }
       }, {

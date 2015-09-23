@@ -35,6 +35,7 @@ Task Name     | Description
 ------------- | ----------------------------------------------------
 `browserSync` | Initialise a local server
 `bump`        | Bump the bower and package version numbers
+`clean`       | Delete the output directory
 `concat`      | Concatenate and compress js files
 `eslint`      | Detect js syntax and style errors
 `iconfont`    | Compile icon font and the corresponding Sass
@@ -42,7 +43,6 @@ Task Name     | Description
 `karma`       | Run jasmine tests
 `minifyHtml`  | Inject assets into and compress the main index.html
 `move`        | Move source files to dist
-`purge`       | Delete the output directory
 `revReplace`  | Rewrite occurrences of file names changed by gulp-rev
 `sass`        | Compile Sass to CSS
 

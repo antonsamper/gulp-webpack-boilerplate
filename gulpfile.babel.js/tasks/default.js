@@ -19,7 +19,7 @@ import runSequence from 'run-sequence';
 gulp.task('default', () => {
   runSequence(
     'karma',
-    'purge',
+    'clean',
     'iconfont',
     'sass',
     'eslint',
