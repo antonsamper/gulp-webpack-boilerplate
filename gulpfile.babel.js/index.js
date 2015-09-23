@@ -35,7 +35,7 @@ global.options = {
 function createGulpTaks(name) {
   name = name.replace('.js','');
   gulp.task(name, () => {
-    require(`${__dirname}/tasks/${name}`)();
+    return require(`${__dirname}/tasks/${name}`)();
   });
 }
 
