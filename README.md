@@ -4,7 +4,7 @@
   </a>
 </p>
 # gulp.js starter for single page apps
-A clean and simple starter boilerplate for single page applications using gulp.js.
+A clean and simple starter ES6 boilerplate for single page applications using gulp.js.
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
