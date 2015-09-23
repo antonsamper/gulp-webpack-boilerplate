@@ -20,12 +20,10 @@ module.exports = config => {
   const basePath = `${__dirname}/../..`;
   const files = bowerFiles({
     paths: {
-      bowerDirectory: basePath + '/bower_components',
-      bowerJson: basePath + '/bower.json'
+      bowerDirectory: `${basePath}/bower_components`,
+      bowerJson: `${basePath}/bower.json`
     }
-  }).concat([
-    sharedPaths.srcDir + '/js/**/*.js'
-  ]);
+  }).concat(`${sharedPaths.srcDir}/js/**/*.js`);
 
   config.set({
     basePath: basePath,
@@ -39,7 +37,7 @@ module.exports = config => {
     coverageReporter: {
       reporters: [{
         type: 'html',
-        dir: sharedPaths.outputDir + '/reports/coverage/',
+        dir: `${sharedPaths.outputDir}/reports/coverage/`,
         subdir: browser => {
           return browser.toLowerCase().split(/[ /-]/)[0];
         }
