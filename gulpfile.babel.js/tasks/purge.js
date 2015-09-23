@@ -17,5 +17,5 @@ import del from 'del';
  *********************************************************************************/
 
 gulp.task('purge', () => {
-  del([sharedPaths.outputDir]);
+  del(sharedPaths.outputDir);
 });

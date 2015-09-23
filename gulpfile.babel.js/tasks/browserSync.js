@@ -9,16 +9,14 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var browserSync = require('browser-sync');
-var gulp = require('gulp');
-var sharedPaths = require('../shared/paths.js');
+import browserSync from 'browser-sync';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('browserSync', function () {
+gulp.task('browserSync', () => {
   browserSync.init([
     sharedPaths.outputJs,
     sharedPaths.outputCss
