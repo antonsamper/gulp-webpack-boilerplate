@@ -9,34 +9,28 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var bowerFiles = require('main-bower-files');
-var browserSync = require('browser-sync');
-var concat = require('gulp-concat');
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var plumber = require('gulp-plumber');
-var rev = require('gulp-rev');
-var sharedPaths = require('../shared/paths.js');
-var sharedEvents = require('../shared/events.js');
-var size = require('gulp-size');
-var uglify = require('gulp-uglify');
+import bowerFiles from 'main-bower-files';
+import browserSync from 'browser-sync';
+import concat from 'gulp-concat';
+import gulpif from 'gulp-if';
+import rev from 'gulp-rev';
+import size from 'gulp-size';
+import uglify from 'gulp-uglify';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('concat', function () {
+gulp.task('concat', () => {
   return gulp
     .src(bowerFiles().concat(sharedPaths.concatSrc))
     .pipe(size({showFiles: true}))
-    .pipe(plumber({
-      errorHandler: sharedEvents.onError
-    }))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', uglify()))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', concat('app.min.js')))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
-    .pipe(gulp.dest(sharedPaths.outputDir + '/js'))
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env !== 'dev', uglify()))
+    .pipe(gulpif(options.env !== 'dev', concat('app.min.js')))
+    .pipe(gulpif(options.env !== 'dev', rev()))
+    .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`))
     .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
 });

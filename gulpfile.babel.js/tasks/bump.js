@@ -11,15 +11,14 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var bump = require('gulp-bump');
-var gulp = require('gulp');
+import bump from 'gulp-bump';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('bump', function () {
+gulp.task('bump', () => {
   return gulp
     .src(['./bower.json', './package.json'])
     .pipe(bump({
