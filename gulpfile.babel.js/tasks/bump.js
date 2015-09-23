@@ -18,11 +18,11 @@ import bump from 'gulp-bump';
  2. TASK
  *********************************************************************************/
 
-gulp.task('bump', () => {
+module.exports = () => {
   return gulp
     .src(['./bower.json', './package.json'])
     .pipe(bump({
       type: process.env.BUMP_TYPE
     }))
     .pipe(gulp.dest('./'));
-});
+};

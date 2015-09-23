@@ -16,7 +16,7 @@ import runSequence from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-gulp.task('default', () => {
+module.exports = () => {
   runSequence(
     'karma',
     'clean',
@@ -28,4 +28,4 @@ gulp.task('default', () => {
     'revReplace',
     'move'
   );
-});
+};

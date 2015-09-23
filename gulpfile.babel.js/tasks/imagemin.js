@@ -18,7 +18,7 @@ import rev from 'gulp-rev';
  2. TASK
  *********************************************************************************/
 
-gulp.task('imagemin', () => {
+module.exports = () => {
   return gulp
     .src(sharedPaths.srcImages)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
@@ -27,4 +27,4 @@ gulp.task('imagemin', () => {
     .pipe(gulp.dest(sharedPaths.outputDir))
     .pipe(gulpif(options.env !== 'dev', rev.manifest()))
     .pipe(gulpif(options.env !== 'dev', gulp.dest(sharedPaths.outputDir)));
-});
+};

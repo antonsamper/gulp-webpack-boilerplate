@@ -16,7 +16,7 @@ import karma from 'karma';
  2. TASK
  *********************************************************************************/
 
-gulp.task('karma', () => {
+module.exports = () => {
 
   const server = new karma.Server({
     configFile: `${__dirname}/../config/karma.js`,
@@ -25,4 +25,4 @@ gulp.task('karma', () => {
 
   return server.start();
 
-});
+};

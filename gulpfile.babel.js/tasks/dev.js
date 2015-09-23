@@ -17,7 +17,7 @@ import runSequence from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-gulp.task('dev', () => {
+module.exports = () => {
 
   global.options.env = 'dev';
 
@@ -40,4 +40,4 @@ gulp.task('dev', () => {
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
   gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['sass']);
 
-});
+};

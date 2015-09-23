@@ -16,7 +16,7 @@ import browserSync from 'browser-sync';
  2. TASK
  *********************************************************************************/
 
-gulp.task('browserSync', () => {
+module.exports = () => {
   browserSync.init([
     sharedPaths.outputJs,
     sharedPaths.outputCss
@@ -28,4 +28,4 @@ gulp.task('browserSync', () => {
     notify: false,
     scrollProportionally: true
   });
-});
+};

@@ -16,6 +16,6 @@ import del from 'del';
  2. TASK
  *********************************************************************************/
 
-gulp.task('clean', () => {
-});
+module.exports = () => {
   return del.sync(sharedPaths.outputDir);
+};

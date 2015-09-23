@@ -32,9 +32,9 @@ gulp.task('revDeleteManifest', () => {
   return del.sync(manifest);
 });
 
-gulp.task('revReplace', () => {
+module.exports = () => {
   runSequence(
     'revReplaceManifest',
     'revDeleteManifest'
   );
-});
+};

@@ -16,10 +16,10 @@ import eslint from 'gulp-eslint';
  2. TASK
  *********************************************************************************/
 
-gulp.task('eslint', () => {
+module.exports = () => {
   return gulp
     .src(sharedPaths.eslintSrc)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(eslint())
     .pipe(eslint.format());
-});
+};

@@ -22,7 +22,7 @@ import uglify from 'gulp-uglify';
  2. TASK
  *********************************************************************************/
 
-gulp.task('concat', () => {
+module.exports = () => {
   return gulp
     .src(bowerFiles().concat(sharedPaths.concatSrc))
     .pipe(size({showFiles: true}))
@@ -33,4 +33,4 @@ gulp.task('concat', () => {
     .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`))
     .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
-});
+};

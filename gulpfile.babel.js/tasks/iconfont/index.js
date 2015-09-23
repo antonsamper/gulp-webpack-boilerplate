@@ -19,7 +19,7 @@ import size from 'gulp-size';
  2. TASK
  *********************************************************************************/
 
-gulp.task('iconfont', () => {
+module.exports = () => {
   return gulp
     .src(sharedPaths.srcIconFont)
     .pipe(size({showFiles: true}))
@@ -32,4 +32,4 @@ gulp.task('iconfont', () => {
     .on('codepoints', generator)
     .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`))
     .pipe(size({showFiles: true}));
-});
+};

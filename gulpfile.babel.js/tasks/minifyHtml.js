@@ -20,7 +20,7 @@ import size from 'gulp-size';
  2. TASK
  *********************************************************************************/
 
-gulp.task('minifyHtml', () => {
+module.exports = () => {
   return gulp
     .src(sharedPaths.srcIndex)
     .pipe(size({showFiles: true}))
@@ -42,4 +42,4 @@ gulp.task('minifyHtml', () => {
     .pipe(gulp.dest(sharedPaths.outputDir))
     .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
-});
+};
