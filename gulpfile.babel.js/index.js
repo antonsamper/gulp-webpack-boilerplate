@@ -8,9 +8,9 @@ require('time-require');
  1. IMPORTS
  *********************************************************************************/
 
+import fs from 'fs';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
-import requireDir from 'require-dir';
 import sharedPaths from './shared/paths.js';
 import sharedEvents from './shared/events.js';
 
@@ -29,7 +29,16 @@ global.options = {
 
 
 /*********************************************************************************
- 3. LOADER
+ 3. TASK LOADER
  *********************************************************************************/
 
-requireDir('tasks', {recurse: true});
+function createGulpTaks(name) {
+  name = name.replace('.js','');
+  return gulp.task(name, () => {
+    require(`${__dirname}/tasks/${name}`);
+  });
+}
+
+fs.readdirSync(`${__dirname}/tasks/`).forEach(function (filename, i) {
+  createGulpTaks(filename);
+});
