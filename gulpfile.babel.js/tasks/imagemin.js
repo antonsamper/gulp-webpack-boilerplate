@@ -9,28 +9,22 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var imagemin = require('gulp-imagemin');
-var plumber = require('gulp-plumber');
-var rev = require('gulp-rev');
-var sharedPaths = require('../shared/paths.js');
-var sharedEvents = require('../shared/events.js');
+import gulpif from 'gulp-if';
+import imagemin from 'gulp-imagemin';
+import rev from 'gulp-rev';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('imagemin', function () {
+gulp.task('imagemin', () => {
   return gulp
     .src(sharedPaths.srcImages)
-    .pipe(plumber({
-      errorHandler: sharedEvents.onError
-    }))
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(imagemin())
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
+    .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(sharedPaths.outputDir))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev.manifest()))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', gulp.dest(sharedPaths.outputDir)));
+    .pipe(gulpif(options.env !== 'dev', rev.manifest()))
+    .pipe(gulpif(options.env !== 'dev', gulp.dest(sharedPaths.outputDir)));
 });
