@@ -18,7 +18,7 @@ import rev from 'gulp-rev';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(sharedPaths.srcImages)
     .pipe(plumber({errorHandler: sharedEvents.onError}))

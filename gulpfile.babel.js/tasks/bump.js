@@ -18,7 +18,7 @@ import bump from 'gulp-bump';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(['./bower.json', './package.json'])
     .pipe(bump({

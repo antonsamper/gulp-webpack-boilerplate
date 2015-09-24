@@ -17,7 +17,7 @@ import runSequence from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
 
   global.options.env = 'dev';
 

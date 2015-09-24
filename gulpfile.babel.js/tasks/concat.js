@@ -22,7 +22,7 @@ import uglify from 'gulp-uglify';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(bowerFiles().concat(sharedPaths.concatSrc))
     .pipe(size({showFiles: true}))

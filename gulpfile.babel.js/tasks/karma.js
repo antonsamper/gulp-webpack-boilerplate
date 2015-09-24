@@ -16,7 +16,7 @@ import karma from 'karma';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
 
   const server = new karma.Server({
     configFile: `${__dirname}/../config/karma.js`,

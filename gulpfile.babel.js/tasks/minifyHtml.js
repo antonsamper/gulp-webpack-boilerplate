@@ -20,7 +20,7 @@ import size from 'gulp-size';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(sharedPaths.srcIndex)
     .pipe(size({showFiles: true}))

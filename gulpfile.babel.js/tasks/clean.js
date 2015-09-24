@@ -16,6 +16,6 @@ import del from 'del';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return del.sync(sharedPaths.outputDir);
 };

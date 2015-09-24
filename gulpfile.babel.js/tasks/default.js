@@ -16,7 +16,7 @@ import runSequence from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   runSequence(
     'karma',
     'clean',

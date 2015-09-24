@@ -9,7 +9,7 @@
  1. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(`./${ sharedPaths.srcDir }/fonts/*.{eot,svg,ttf,woff}`, {
       base: `./${ sharedPaths.srcDir }`

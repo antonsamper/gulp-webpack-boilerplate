@@ -16,7 +16,7 @@ import browserSync from 'browser-sync';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   browserSync.init([
     sharedPaths.outputJs,
     sharedPaths.outputCss

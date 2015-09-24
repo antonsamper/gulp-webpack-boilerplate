@@ -16,7 +16,7 @@ import eslint from 'gulp-eslint';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(sharedPaths.eslintSrc)
     .pipe(plumber({errorHandler: sharedEvents.onError}))

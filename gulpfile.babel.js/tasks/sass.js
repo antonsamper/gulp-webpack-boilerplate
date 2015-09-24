@@ -23,7 +23,7 @@ import sourcemaps from 'gulp-sourcemaps';
  2. TASK
  *********************************************************************************/
 
-module.exports = () => {
+export default () => {
   return gulp
     .src(`${ sharedPaths.srcDir }/sass/*.scss`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
