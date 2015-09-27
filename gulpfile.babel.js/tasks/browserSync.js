@@ -17,7 +17,11 @@ import browserSync from 'browser-sync';
  *********************************************************************************/
 
 export default () => {
-  browserSync.init([
+
+  const bs = browserSync.create();
+
+  return bs.init([
+    sharedPaths.srcIndex,
     sharedPaths.outputJs,
     sharedPaths.outputCss
   ], {
@@ -28,4 +32,5 @@ export default () => {
     notify: false,
     scrollProportionally: true
   });
+
 };

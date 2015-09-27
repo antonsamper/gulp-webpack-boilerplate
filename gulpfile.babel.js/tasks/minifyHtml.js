@@ -9,7 +9,6 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import browserSync from 'browser-sync';
 import gulpif from 'gulp-if';
 import inject from 'gulp-inject';
 import minifyHtml from 'gulp-minify-html';
@@ -40,6 +39,5 @@ export default () => {
       quotes: true
     })))
     .pipe(gulp.dest(sharedPaths.outputDir))
-    .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
 };

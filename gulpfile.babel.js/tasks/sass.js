@@ -10,7 +10,6 @@
  *********************************************************************************/
 
 import autoprefixer from 'gulp-autoprefixer';
-import browserSync from 'browser-sync';
 import csso from 'gulp-csso';
 import gulpif from 'gulp-if';
 import rev from 'gulp-rev';
@@ -34,6 +33,5 @@ export default () => {
     .pipe(gulpif(options.env !== 'dev', csso()))
     .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(sharedPaths.outputDir + '/css'))
-    .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
 };

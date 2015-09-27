@@ -10,7 +10,6 @@
  *********************************************************************************/
 
 import bowerFiles from 'main-bower-files';
-import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
 import rev from 'gulp-rev';
@@ -31,6 +30,5 @@ export default () => {
     .pipe(gulpif(options.env !== 'dev', concat('app.min.js')))
     .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`))
-    .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
 };
