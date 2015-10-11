@@ -29,7 +29,7 @@ module.exports = config => {
     basePath: basePath,
     frameworks: ['jasmine'],
     files: files,
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS2'],
     preprocessors: {
       'src/js/**/!(*spec).js': ['coverage']
     },
