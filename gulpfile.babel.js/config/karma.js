@@ -21,6 +21,7 @@ module.exports = config => {
     ],
     browsers: ['PhantomJS2'],
     preprocessors: {
+      'src/js/**/*.js': ['babel'],
       'src/js/**/!(*spec).js': ['coverage']
     },
     reporters: ['spec', 'coverage'],
@@ -34,6 +35,11 @@ module.exports = config => {
       }, {
         type: 'text-summary'
       }]
+    },
+    babelPreprocessor: {
+      options: {
+        sourceMap: 'inline'
+      }
     }
   });
 

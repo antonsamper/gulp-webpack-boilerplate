@@ -9,12 +9,15 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import addSrc from 'gulp-add-src';
 import bowerFiles from 'main-bower-files';
 import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
 import rev from 'gulp-rev';
 import size from 'gulp-size';
 import uglify from 'gulp-uglify';
+import babel from 'gulp-babel';
+import sourcemaps from 'gulp-sourcemaps';
 
 
 /*********************************************************************************
@@ -23,9 +26,13 @@ import uglify from 'gulp-uglify';
 
 export default () => {
   return gulp
-    .src(bowerFiles().concat(sharedPaths.concatSrc))
+    .src(sharedPaths.concatSrc)
     .pipe(size({showFiles: true}))
     .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
+    .pipe(babel())
+    .pipe(gulpif(options.env === 'dev', sourcemaps.write()))
+    .pipe(addSrc(bowerFiles()))
     .pipe(gulpif(options.env !== 'dev', uglify()))
     .pipe(gulpif(options.env !== 'dev', concat('app.min.js')))
     .pipe(gulpif(options.env !== 'dev', rev()))
