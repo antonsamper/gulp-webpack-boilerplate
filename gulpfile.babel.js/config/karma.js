@@ -5,30 +5,20 @@
 
 
 /*********************************************************************************
- 1. DEPENDENCIES
- *********************************************************************************/
-
-import bowerFiles from 'main-bower-files';
-
-
-/*********************************************************************************
- 2. TASK
+ 1. TASK
  *********************************************************************************/
 
 module.exports = config => {
 
   const basePath = `${__dirname}/../..`;
-  const files = bowerFiles({
-    paths: {
-      bowerDirectory: `${basePath}/bower_components`,
-      bowerJson: `${basePath}/bower.json`
-    }
-  }).concat(`${sharedPaths.srcDir}/js/**/*.js`);
 
   config.set({
     basePath: basePath,
     frameworks: ['jasmine'],
-    files: files,
+    files: [
+      'node_modules/babel-core/browser-polyfill.js',
+      `${sharedPaths.srcDir}/js/**/*.js`
+    ],
     browsers: ['PhantomJS2'],
     preprocessors: {
       'src/js/**/!(*spec).js': ['coverage']
