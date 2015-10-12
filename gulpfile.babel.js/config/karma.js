@@ -19,7 +19,7 @@ module.exports = config => {
       'node_modules/babel-core/browser-polyfill.js',
       `${sharedPaths.srcDir}/js/**/*.js`
     ],
-    browsers: ['PhantomJS2'],
+    browsers: ['PhantomJS'],
     preprocessors: {
       'src/js/**/*.js': ['babel'],
       'src/js/**/!(*spec).js': ['coverage']
