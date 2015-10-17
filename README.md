@@ -33,7 +33,6 @@ Task Name    | Description
 
 Task Name     | Description
 ------------- | ----------------------------------------------------
-`bump`        | Bump the bower and package version numbers
 `clean`       | Delete the output directory
 `eslint`      | Detect js syntax and style errors
 `iconfont`    | Compile icon font and the corresponding Sass
