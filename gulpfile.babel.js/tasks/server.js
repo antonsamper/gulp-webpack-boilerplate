@@ -18,7 +18,7 @@ import browserSync from 'browser-sync';
 
 export default () => {
 
-  const bs = browserSync.create();
+  let bs = browserSync.create();
 
   return bs.init([
     sharedPaths.srcIndex,

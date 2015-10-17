@@ -18,7 +18,7 @@ import karma from 'karma';
 
 export default () => {
 
-  const server = new karma.Server({
+  let server = new karma.Server({
     configFile: `${__dirname}/../config/karma.js`,
     singleRun: options.env !== 'dev'
   });

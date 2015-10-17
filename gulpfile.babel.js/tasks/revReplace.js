@@ -18,7 +18,7 @@ import runSequence from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-const manifest = `${ sharedPaths.outputDir }/rev-manifest.json`;
+let manifest = `${ sharedPaths.outputDir }/rev-manifest.json`;
 
 gulp.task('revReplaceManifest', () => {
   return gulp

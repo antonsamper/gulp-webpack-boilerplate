@@ -19,7 +19,7 @@ import swig from 'gulp-swig';
  *********************************************************************************/
 
 export default codepoints => {
-  const scssTemplate = '/_iconfont.scss.swig';
+  let scssTemplate = '/_iconfont.scss.swig';
   return gulp
     .src(`${__dirname}${scssTemplate}`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))

@@ -10,7 +10,7 @@
 
 module.exports = config => {
 
-  const basePath = `${__dirname}/../..`;
+  let basePath = `${__dirname}/../..`;
 
   config.set({
     basePath: basePath,
