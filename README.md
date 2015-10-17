@@ -111,3 +111,10 @@ This boilerplate supports bower components. The components are installed in the 
 
 ### SASS
 This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
+
+### Releases
+This plugin uses `release-it` and the three main functions have been mapped as custom npm scripts. When creating a release all you have to do is run any of the following:
+ *  `npm run release-patch`
+ *  `npm run release-minor`
+ *  `npm run release-major`
+      
