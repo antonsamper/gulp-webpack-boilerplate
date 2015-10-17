@@ -12,7 +12,6 @@
 import gulpif from 'gulp-if';
 import inject from 'gulp-inject';
 import minifyHtml from 'gulp-minify-html';
-import size from 'gulp-size';
 
 
 /*********************************************************************************
@@ -22,7 +21,6 @@ import size from 'gulp-size';
 export default () => {
   return gulp
     .src(sharedPaths.srcIndex)
-    .pipe(size({showFiles: true}))
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(inject(gulp.src([
       sharedPaths.outputCss,
@@ -38,6 +36,5 @@ export default () => {
       spare: true,
       quotes: true
     })))
-    .pipe(gulp.dest(sharedPaths.outputDir))
-    .pipe(size({showFiles: true}));
+    .pipe(gulp.dest(sharedPaths.outputDir));
 };

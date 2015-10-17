@@ -18,7 +18,7 @@ import swig from 'gulp-swig';
  2. EXPORTS
  *********************************************************************************/
 
-module.exports = codepoints => {
+export default codepoints => {
   const scssTemplate = '/_iconfont.scss.swig';
   return gulp
     .src(`${__dirname}${scssTemplate}`)

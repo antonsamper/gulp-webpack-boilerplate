@@ -1,7 +1,7 @@
 /*
- * @title Concat
+ * @title Scripts
  * @description A task to concatenate and compress js files
- * @example (cli) gulp concat
+ * @example (cli) gulp scripts
  */
 
 
@@ -14,7 +14,6 @@ import bowerFiles from 'main-bower-files';
 import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
 import rev from 'gulp-rev';
-import size from 'gulp-size';
 import uglify from 'gulp-uglify';
 import babel from 'gulp-babel';
 import sourcemaps from 'gulp-sourcemaps';
@@ -27,7 +26,6 @@ import sourcemaps from 'gulp-sourcemaps';
 export default () => {
   return gulp
     .src(sharedPaths.concatSrc)
-    .pipe(size({showFiles: true}))
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(babel())
@@ -36,6 +34,5 @@ export default () => {
     .pipe(gulpif(options.env !== 'dev', uglify()))
     .pipe(gulpif(options.env !== 'dev', concat('app.min.js')))
     .pipe(gulpif(options.env !== 'dev', rev()))
-    .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`))
-    .pipe(size({showFiles: true}));
+    .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`));
 };

@@ -12,7 +12,6 @@
 import configIconfont from '../../config/iconfont.js';
 import generator from './generator.js';
 import iconfont from 'gulp-iconfont';
-import size from 'gulp-size';
 
 
 /*********************************************************************************
@@ -22,7 +21,6 @@ import size from 'gulp-size';
 export default () => {
   return gulp
     .src(sharedPaths.srcIconFont)
-    .pipe(size({showFiles: true}))
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(iconfont({
       fontName: configIconfont.name,
@@ -30,6 +28,5 @@ export default () => {
       normalize: configIconfont.normalize
     }))
     .on('codepoints', generator)
-    .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`))
-    .pipe(size({showFiles: true}));
+    .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`));
 };
