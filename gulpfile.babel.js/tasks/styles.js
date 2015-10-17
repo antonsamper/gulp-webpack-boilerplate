@@ -1,7 +1,7 @@
 /*
- * @title Sass
+ * @title Styles
  * @description A task to compile Sass to CSS
- * @example (cli) gulp sass
+ * @example (cli) gulp styles
  */
 
 

@@ -30,7 +30,7 @@ export default () => {
     'concat',
     ['minifyHtml', 'imagemin'],
     'move',
-    'browserSync'
+    'server'
   );
 
   gulp.watch(sharedPaths.eslintSrc, ['eslint']);

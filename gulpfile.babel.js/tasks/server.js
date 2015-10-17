@@ -1,7 +1,7 @@
 /*
- * @title BrowserSync
+ * @title Server
  * @description A task to initialise a local server
- * @example (cli) gulp browserSync
+ * @example (cli) gulp server
  */
 
 
