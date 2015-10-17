@@ -8,9 +8,9 @@
   "scripts": {
     "test": "gulp karma",
     "postinstall": "bower i",
-    "release-patch": "release-it patch",
-    "release-minor": "release-it minor",
-    "release-major": "release-it major"
+    "release-patch": "release-it --non-interactive patch",
+    "release-minor": "release-it --non-interactive minor",
+    "release-major": "release-it --non-interactive major"
   },
   "devDependencies": {
     "babel-core": "5.8.25",
