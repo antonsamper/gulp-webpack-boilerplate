@@ -27,14 +27,14 @@ export default () => {
     'iconfont',
     'styles',
     'eslint',
-    'concat',
+    'scripts',
     ['minifyHtml', 'imagemin'],
     'move',
     'server'
   );
 
   gulp.watch(sharedPaths.eslintSrc, ['eslint']);
-  gulp.watch(sharedPaths.concatSrc, ['concat']);
+  gulp.watch(sharedPaths.concatSrc, ['scripts']);
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
   gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);

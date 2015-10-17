@@ -23,7 +23,7 @@ export default () => {
     'iconfont',
     'styles',
     'eslint',
-    'concat',
+    'scripts',
     ['minifyHtml', 'imagemin'],
     'revReplace',
     'move'
