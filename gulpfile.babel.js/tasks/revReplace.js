@@ -9,38 +9,32 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var del = require('del');
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var revReplace = require('gulp-rev-replace');
-var runSequence = require('run-sequence');
-var sharedPaths = require('../shared/paths.js');
-var sharedEvents = require('../shared/events.js');
+import del from 'del';
+import revReplace from 'gulp-rev-replace';
+import runSequence from 'run-sequence';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-var manifest = sharedPaths.outputDir + '/rev-manifest.json';
+let manifest = `${ sharedPaths.outputDir }/rev-manifest.json`;
 
-gulp.task('revReplaceManifest', function () {
+gulp.task('revReplaceManifest', () => {
   return gulp
-    .src(sharedPaths.outputDir + '/**/*.{html,css,js}')
-    .pipe(plumber({
-      errorHandler: sharedEvents.onError
-    }))
+    .src(`${ sharedPaths.outputDir }/**/*.{html,css,js}`)
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(revReplace({manifest: gulp.src(manifest)}))
     .pipe(gulp.dest(sharedPaths.outputDir));
 });
 
-gulp.task('revPurgeManifest', function () {
-  del(manifest);
+gulp.task('revDeleteManifest', () => {
+  return del.sync(manifest);
 });
 
-gulp.task('revReplace', function () {
+export default () => {
   runSequence(
     'revReplaceManifest',
-    'revPurgeManifest'
+    'revDeleteManifest'
   );
-});
+};

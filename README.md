@@ -4,7 +4,7 @@
   </a>
 </p>
 # gulp.js starter for single page apps
-A clean and simple starter boilerplate for single page applications using gulp.js.
+A clean and simple starter ES6 boilerplate for single page applications using gulp.js.
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
@@ -33,18 +33,18 @@ Task Name    | Description
 
 Task Name     | Description
 ------------- | ----------------------------------------------------
-`browserSync` | Initialise a local server
 `bump`        | Bump the bower and package version numbers
-`concat`      | Concatenate and compress js files
+`clean`       | Delete the output directory
 `eslint`      | Detect js syntax and style errors
 `iconfont`    | Compile icon font and the corresponding Sass
 `imagemin`    | Minify images and svg files
 `karma`       | Run jasmine tests
 `minifyHtml`  | Inject assets into and compress the main index.html
 `move`        | Move source files to dist
-`purge`       | Delete the output directory
 `revReplace`  | Rewrite occurrences of file names changed by gulp-rev
-`sass`        | Compile Sass to CSS
+`scripts`     | Concatenate and compress js files
+`server`      | Initialise a local server
+`styles`      | Compile Sass to CSS
 
 
 ## File Structure

@@ -9,36 +9,35 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var browserSync = require('browser-sync');
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var sharedPaths = require('../shared/paths.js');
+import browserSync from 'browser-sync';
+import runSequence from 'run-sequence';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('dev', function () {
+export default () => {
 
-  process.env.ENVIRONMENT_TYPE = 'dev';
+  global.options.env = 'dev';
 
   runSequence(
-    'purge',
+    'karma',
+    'clean',
     'iconfont',
-    'sass',
+    'styles',
     'eslint',
-    'concat',
-    ['karma', 'minifyHtml', 'imagemin'],
+    'scripts',
+    ['minifyHtml', 'imagemin'],
     'move',
-    'browserSync'
+    'server'
   );
 
-  gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
-  gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(sharedPaths.eslintSrc, ['eslint']);
-  gulp.watch(sharedPaths.concatSrc, ['concat']);
+  gulp.watch(sharedPaths.concatSrc, ['scripts']);
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
+  gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
+  gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['styles']);
 
-});
+};

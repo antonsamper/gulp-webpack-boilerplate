@@ -1,7 +1,7 @@
 /*
- * @title Karma
- * @description A task to run jasmine tests
- * @example (cli) gulp karma
+ * @title Clean
+ * @description A task to delete the output directory
+ * @example (cli) gulp clean
  */
 
 
@@ -9,21 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var gulp = require('gulp');
-var Server = require('karma').Server;
+import del from 'del';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('karma', function () {
-
-  var server = new Server({
-    configFile: __dirname + '/../config/karma.js',
-    singleRun: process.env.ENVIRONMENT_TYPE !== 'dev'
-  });
-
-  return server.start();
-
-});
+export default () => {
+  return del.sync(sharedPaths.outputDir);
+};

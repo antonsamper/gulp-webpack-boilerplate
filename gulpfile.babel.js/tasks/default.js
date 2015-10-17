@@ -9,23 +9,23 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
+import runSequence from 'run-sequence';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('default', function () {
+export default () => {
   runSequence(
-    'purge',
+    'karma',
+    'clean',
     'iconfont',
-    'sass',
+    'styles',
     'eslint',
-    'concat',
-    ['karma', 'minifyHtml', 'imagemin'],
+    'scripts',
+    ['minifyHtml', 'imagemin'],
     'revReplace',
     'move'
   );
-});
+};

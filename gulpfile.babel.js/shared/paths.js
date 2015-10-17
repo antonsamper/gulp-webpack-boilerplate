@@ -17,11 +17,11 @@ module.exports = {
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css',
   eslintSrc: [
-    'src/js/**/*.js',
-    'package.json',
+    '.eslintrc',
     'bower.json',
-    'gulpfile.js',
-    '.eslintrc'
+    'package.json',
+    'src/js/**/*.js',
+    'gulpfile.babel.js/**/*.js'
   ],
   concatSrc: [
     'src/js/**/*.js',

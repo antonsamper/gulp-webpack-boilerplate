@@ -1,7 +1,7 @@
 /*
- * @title BrowserSync
+ * @title Server
  * @description A task to initialise a local server
- * @example (cli) gulp browserSync
+ * @example (cli) gulp server
  */
 
 
@@ -9,17 +9,19 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var browserSync = require('browser-sync');
-var gulp = require('gulp');
-var sharedPaths = require('../shared/paths.js');
+import browserSync from 'browser-sync';
 
 
 /*********************************************************************************
  2. TASK
  *********************************************************************************/
 
-gulp.task('browserSync', function () {
-  browserSync.init([
+export default () => {
+
+  let bs = browserSync.create();
+
+  return bs.init([
+    sharedPaths.srcIndex,
     sharedPaths.outputJs,
     sharedPaths.outputCss
   ], {
@@ -30,4 +32,5 @@ gulp.task('browserSync', function () {
     notify: false,
     scrollProportionally: true
   });
-});
+
+};
