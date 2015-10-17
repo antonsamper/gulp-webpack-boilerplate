@@ -21,7 +21,7 @@ export default () => {
     'karma',
     'clean',
     'iconfont',
-    'sass',
+    'styles',
     'eslint',
     'concat',
     ['minifyHtml', 'imagemin'],

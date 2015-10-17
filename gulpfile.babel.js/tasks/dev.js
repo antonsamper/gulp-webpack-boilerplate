@@ -25,7 +25,7 @@ export default () => {
     'karma',
     'clean',
     'iconfont',
-    'sass',
+    'styles',
     'eslint',
     'concat',
     ['minifyHtml', 'imagemin'],
@@ -38,6 +38,6 @@ export default () => {
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
   gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
-  gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['sass']);
+  gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['styles']);
 
 };
