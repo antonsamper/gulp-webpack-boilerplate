@@ -11,7 +11,7 @@ import fs from 'fs';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import sharedPaths from './shared/paths.js';
-import sharedEvents from './shared/events.js';
+import events from './shared/events.js';
 
 
 /*********************************************************************************
@@ -21,7 +21,7 @@ import sharedEvents from './shared/events.js';
 global.gulp = gulp;
 global.plumber = plumber;
 global.sharedPaths = sharedPaths;
-global.sharedEvents = sharedEvents;
+global.sharedEvents = events;
 global.options = {
   env: 'production'
 };

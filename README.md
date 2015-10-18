@@ -26,7 +26,7 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name    | Description
 ------------ | ---------------------------------------------------------------------
-`default`    | Output minified production code, asset revisions and run unit tests
+`default`    | Outputs minified production code, asset revisions and run unit tests
 `dev`        | Generate a development environment with watch, karma and browsersync
 
 ###### Individual Tasks
@@ -106,13 +106,13 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 ```
 
 ### Bower
-This boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "dist/jquery.js",`
+The boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "dist/jquery.js",`
 
 ### SASS
-This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
+This workflow uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
 
 ### Releases
-This plugin uses `release-it` and the three main functions have been mapped as custom npm scripts. When creating a release all you have to do is run any of the following:
+The three main functions of `release-it` have been mapped as custom npm scripts. When creating a release all you have to do is run any of the following:
  *  `npm run release-patch`
  *  `npm run release-minor`
  *  `npm run release-major`

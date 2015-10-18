@@ -8,9 +8,11 @@
  1. EXPORTS
  *********************************************************************************/
 
-module.exports = {
-  onError: err => {
-    console.error(err.plugin, err.message);
+let events = {
+  onError: function (err) {
+    console.error(err.plugin, '>', err.message);
     this.emit('end');
   }
 };
+
+export default events;
