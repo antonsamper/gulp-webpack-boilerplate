@@ -16,7 +16,7 @@ module.exports = config => {
     basePath: basePath,
     frameworks: ['jasmine'],
     files: [
-      'node_modules/babel-core/browser-polyfill.js',
+      'node_modules/babel-polyfill/dist/polyfill.js',
       `${sharedPaths.srcDir}/js/**/*.js`
     ],
     browsers: ['PhantomJS'],
