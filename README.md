@@ -16,7 +16,7 @@ A clean and simple starter ES6 boilerplate for single page applications using gu
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks, for example:
 
  ```
- $ npm i
+ $ npm i (bower components installed automatically)
  $ gulp dev
  ```
 
@@ -50,6 +50,7 @@ Task Name     | Description
 The default working directory for development is `src/`. This directory contains all the styles, scripts, fonts and images used to create the front-end of the website.
 
 ```
+bower_components/
 dist/
 src/
 |- fonts/
@@ -103,6 +104,9 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 			|- helloWorld.html
 			|- helloWorld.css
 ```
+
+### Bower
+The boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "dist/jquery.js",`
 
 ### SASS
 This workflow uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.

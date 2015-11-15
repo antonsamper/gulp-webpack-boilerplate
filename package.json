@@ -45,7 +45,6 @@
     "gulp-uglify": "1.4.1",
     "gulp-util": "3.0.6",
     "jasmine-core": "2.3.4",
-    "jquery": "2.1.4",
     "karma": "0.13.9",
     "karma-babel-preprocessor": "6.0.1",
     "karma-coverage": "0.5.2",
