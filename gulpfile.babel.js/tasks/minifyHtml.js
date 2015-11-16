@@ -22,10 +22,7 @@ export default () => {
   return gulp
     .src(sharedPaths.srcIndex)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(inject(gulp.src([
-      sharedPaths.outputCss,
-      sharedPaths.outputJs
-    ], {
+    .pipe(inject(gulp.src(sharedPaths.outputCss.concat(sharedPaths.outputJs), {
       read: false
     }), {
       ignorePath: sharedPaths.outputDir,

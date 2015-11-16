@@ -8,4 +8,8 @@
  1. MODULE DEFINITION
  *********************************************************************************/
 
+$('document').ready(function () {
+  console.log('[APP] DOM Ready...');
+});
+
 var APP = {};

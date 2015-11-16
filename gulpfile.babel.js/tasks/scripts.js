@@ -9,13 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import addSrc from 'gulp-add-src';
+import babel from 'gulp-babel';
 import bowerFiles from 'main-bower-files';
 import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
+import merge from 'merge-stream';
 import rev from 'gulp-rev';
 import uglify from 'gulp-uglify';
-import babel from 'gulp-babel';
 import sourcemaps from 'gulp-sourcemaps';
 
 
@@ -24,15 +24,28 @@ import sourcemaps from 'gulp-sourcemaps';
  *********************************************************************************/
 
 export default () => {
-  return gulp
+
+  let libs = gulp
+    .src(bowerFiles())
+    .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env !== 'dev', uglify()))
+    .pipe(gulpif(options.env !== 'dev', concat('libs.min.js')))
+    .pipe(gulpif(options.env !== 'dev', rev()))
+    .pipe(gulp.dest(`${ sharedPaths.outputDir }/js/bower`));
+
+  let app = gulp
     .src(sharedPaths.concatSrc)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(babel())
     .pipe(gulpif(options.env === 'dev', sourcemaps.write()))
-    .pipe(addSrc(bowerFiles()))
     .pipe(gulpif(options.env !== 'dev', uglify()))
     .pipe(gulpif(options.env !== 'dev', concat('app.min.js')))
     .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`));
+
+  return merge(libs, app);
+
 };
+
+

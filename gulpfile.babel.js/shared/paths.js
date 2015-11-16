@@ -14,8 +14,11 @@ module.exports = {
   srcImages: ['src/**/*.{jpg,png,gif,svg}', '!src/fonts/**/*.svg'],
   srcIconFont: 'src/fonts/iconfont/*.svg',
   outputDir: 'dist',
-  outputJs: 'dist/js/**/*.js',
-  outputCss: 'dist/css/*.css',
+  outputJs:  [
+    'dist/js/bower/**/*.js',
+    'dist/js/app.js',
+    'dist/js/**/*.js'],
+  outputCss: ['dist/css/*.css'],
   eslintSrc: [
     '.eslintrc',
     'bower.json',
