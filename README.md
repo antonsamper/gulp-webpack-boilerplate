@@ -28,7 +28,7 @@ Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
 `npm run compile` | Outputs minified production code, asset revisions and run unit tests
 `npm run devmode` | Generate a development environment with watch, karma and browsersync
-`npm run test`    | Run unit tests
+`npm run tests`   | Run unit tests
 
 ## Gulp Tasks
 

@@ -18,7 +18,6 @@ import runSequence from 'run-sequence';
 
 export default () => {
   runSequence(
-    'karma',
     'clean',
     'iconfont',
     'styles',
@@ -26,6 +25,7 @@ export default () => {
     'scripts',
     ['minifyHtml', 'imagemin'],
     'revReplace',
-    'move'
+    'move',
+    'karma'
   );
 };
