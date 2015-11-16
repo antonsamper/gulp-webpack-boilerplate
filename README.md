@@ -17,33 +17,43 @@ To start using the boilerplate, first install all the dependencies and then run 
 
  ```
  $ npm i (bower components installed automatically)
- $ gulp dev
+ $ npm run devmode
  ```
 
-## Tasks
+## Npm Tasks
 
 ###### Bundle Tasks
 
-Task Name    | Description
------------- | ---------------------------------------------------------------------
-`default`    | Outputs minified production code, asset revisions and run unit tests
-`dev`        | Generate a development environment with watch, karma and browsersync
+Task Name         | Description
+----------------- | ---------------------------------------------------------------------
+`npm run compile` | Outputs minified production code, asset revisions and run unit tests
+`npm run devmode` | Generate a development environment with watch, karma and browsersync
+`npm run test`    | Run unit tests
+
+## Gulp Tasks
+
+###### Bundle Tasks
+
+Task Name         | Description
+----------------- | ---------------------------------------------------------------------
+`gulp`            | Outputs minified production code, asset revisions and run unit tests
+`gulp dev`        | Generate a development environment with watch, karma and browsersync
 
 ###### Individual Tasks
 
-Task Name     | Description
-------------- | ----------------------------------------------------
-`clean`       | Delete the output directory
-`eslint`      | Detect js syntax and style errors
-`iconfont`    | Compile icon font and the corresponding Sass
-`imagemin`    | Minify images and svg files
-`karma`       | Run jasmine tests
-`minifyHtml`  | Inject assets into and compress the main index.html
-`move`        | Move source files to dist
-`revReplace`  | Rewrite occurrences of file names changed by gulp-rev
-`scripts`     | Concatenate and compress js files
-`server`      | Initialise a local server
-`styles`      | Compile Sass to CSS
+Task Name         | Description
+----------------- | ----------------------------------------------------
+`gulp clean`      | Delete the output directory
+`gulp eslint`     | Detect js syntax and style errors
+`gulp iconfont`   | Compile icon font and the corresponding Sass
+`gulp imagemin`   | Minify images and svg files
+`gulp karma`      | Run unit tests
+`gulp minifyHtml` | Inject assets into and compress the main index.html
+`gulp move`       | Move source files to dist
+`gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
+`gulp scripts`    | Concatenate and compress js files
+`gulp server`     | Initialise a local server
+`gulp styles`     | Compile Sass to CSS
 
 
 ## File Structure
