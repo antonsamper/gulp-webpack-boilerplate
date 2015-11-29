@@ -20,11 +20,7 @@ export default () => {
 
   let bs = browserSync.create();
 
-  return bs.init([
-    sharedPaths.srcIndex,
-    sharedPaths.outputJs,
-    sharedPaths.outputCss
-  ], {
+  return bs.init([`${sharedPaths.outputDir}/**/*.{html,css,js}`], {
     server: {
       baseDir: sharedPaths.outputDir
     },
