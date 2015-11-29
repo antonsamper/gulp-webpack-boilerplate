@@ -8,7 +8,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import configIconfont from '../../config/iconfont.js';
+import configIconfont from '../../config/iconfont.conf.js';
 import data from 'gulp-data';
 import rename from 'gulp-rename';
 import swig from 'gulp-swig';

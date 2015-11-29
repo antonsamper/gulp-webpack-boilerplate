@@ -9,7 +9,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import configIconfont from '../../config/iconfont.js';
+import configIconfont from '../../config/iconfont.conf.js';
 import generator from './generator.js';
 import iconfont from 'gulp-iconfont';
 
