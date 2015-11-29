@@ -17,7 +17,7 @@ To start using the boilerplate, first install all the dependencies and then run 
 
  ```
  $ npm i (bower components installed automatically)
- $ npm run devmode
+ $ npm run dev
  ```
 
 ## Npm Tasks
