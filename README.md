@@ -26,8 +26,8 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm run compile` | Outputs minified production code, asset revisions and run unit tests
-`npm run devmode` | Generate a development environment with watch, karma and browsersync
+`npm run prod`    | Outputs minified production code, asset revisions and run unit tests
+`npm run dev`     | Generate a development environment with watch, karma and browsersync
 `npm run tests`   | Run unit tests
 
 ## Gulp Tasks
