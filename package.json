@@ -8,7 +8,7 @@
   "scripts": {
     "prod": "gulp",
     "dev": "gulp dev",
-    "tests": "gulp karma",
+    "test": "gulp karma",
     "postinstall": "bower i",
     "release-patch": "release-it --non-interactive patch",
     "release-minor": "release-it --non-interactive minor",
