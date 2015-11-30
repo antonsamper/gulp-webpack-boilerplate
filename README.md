@@ -8,7 +8,7 @@ A clean and simple starter ES6 boilerplate for single page applications using gu
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
 [![Travis](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
-[![Dependencies](https://img.shields.io/david/dev/strongloop/express.svg)](https://github.com/antonsamper/gulp-boilerplate)
+
 ###### Boilerplate variations
 - [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
 
