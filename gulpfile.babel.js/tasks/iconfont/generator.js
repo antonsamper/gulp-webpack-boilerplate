@@ -25,10 +25,10 @@ export default codepoints => {
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(data(() => {
       return {
-        icons: codepoints.map(icon => {
+        icons: codepoints.map(glyph => {
           return {
-            name: icon.name,
-            code: icon.codepoint.toString(16)
+            name: glyph.name,
+            code: glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase()
           };
         }),
         className: configIconfont.name,

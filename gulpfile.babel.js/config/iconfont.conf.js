@@ -10,6 +10,6 @@
 
 module.exports = {
   name: 'iconfont',
-  codepoints: true,
-  normalize: false
+  appendUnicode: true,
+  formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
 };
