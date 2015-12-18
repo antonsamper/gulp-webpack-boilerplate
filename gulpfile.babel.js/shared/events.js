@@ -8,11 +8,9 @@
  1. EXPORTS
  *********************************************************************************/
 
-let events = {
+export default {
   onError: function (err) {
     console.error(err.plugin, '>', err.message);
     this.emit('end');
   }
 };
-
-export default events;

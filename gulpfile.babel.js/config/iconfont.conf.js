@@ -8,7 +8,7 @@
  1. EXPORTS
  *********************************************************************************/
 
-module.exports = {
+export default {
   name: 'iconfont',
   appendUnicode: true,
   formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
