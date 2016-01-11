@@ -26,7 +26,7 @@ import sourcemaps from 'gulp-sourcemaps';
 export default () => {
 
   let libs = gulp
-    .src(bowerFiles())
+    .src(bowerFiles('**/*.js'))
     .pipe(plumber({errorHandler: sharedEvents.onError}))
     .pipe(gulpif(options.env !== 'dev', uglify()))
     .pipe(gulpif(options.env !== 'dev', concat('libs.min.js')))
