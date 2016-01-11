@@ -50,7 +50,7 @@ Task Name         | Description
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
 `gulp minifyHtml` | Inject assets into and compress the main index.html
-`gulp move`       | Move source files to dist
+`gulp move`       | Move source files to output directory
 `gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
 `gulp scripts`    | Concatenate and compress js files
 `gulp server`     | Initialise a local server
@@ -97,7 +97,7 @@ In order to generate a custom icon font, place your svg files inside the `src/fo
 &--iconfont02:before { content: '\e002'; }
 &--iconfont03:before { content: '\e003'; }
 ```
-This auto generated file is explictily included in the Sass manifest.
+This auto generated file is explicitly included in the Sass manifest.
 
 ### Images
 All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
@@ -117,7 +117,7 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 ```
 
 ### Bower
-The boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "dist/jquery.js",`
+The boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "jquery.js",`
 
 ### SASS
 This workflow uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
