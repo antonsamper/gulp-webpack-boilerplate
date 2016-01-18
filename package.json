@@ -60,9 +60,5 @@
     "release-it": "2.3.1",
     "run-sequence": "1.1.5",
     "through2": "2.0.0"
-  },
-  "engines": {
-    "node": ">=4.2.3",
-    "npm": ">=2.14.7"
   }
 }
