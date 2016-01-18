@@ -11,7 +11,7 @@
 
 import gulpif from 'gulp-if';
 import inject from 'gulp-inject';
-import minifyHtml from 'gulp-minify-html';
+import htmlmin from 'gulp-htmlmin';
 
 
 /*********************************************************************************
@@ -28,10 +28,6 @@ export default () => {
       ignorePath: sharedPaths.outputDir,
       addRootSlash: false
     }))
-    .pipe(gulpif(options.env !== 'dev', minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true
-    })))
+    .pipe(gulpif(options.env !== 'dev', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest(sharedPaths.outputDir));
 };
