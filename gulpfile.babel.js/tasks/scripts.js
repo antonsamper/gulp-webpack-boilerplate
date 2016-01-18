@@ -12,6 +12,7 @@
 import babel from 'gulp-babel';
 import bowerFiles from 'main-bower-files';
 import concat from 'gulp-concat';
+import cache from 'gulp-cached';
 import gulpif from 'gulp-if';
 import merge from 'merge-stream';
 import rev from 'gulp-rev';
@@ -36,6 +37,7 @@ export default () => {
   let app = gulp
     .src(sharedPaths.concatSrc)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env === 'dev', cache('scripts')))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(babel())
     .pipe(gulpif(options.env === 'dev', sourcemaps.write()))

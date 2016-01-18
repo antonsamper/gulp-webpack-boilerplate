@@ -9,6 +9,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import cache from 'gulp-cached';
 import gulpif from 'gulp-if';
 import imagemin from 'gulp-imagemin';
 import rev from 'gulp-rev';
@@ -22,6 +23,7 @@ export default () => {
   return gulp
     .src(sharedPaths.srcImages)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env === 'dev', cache('imagemin')))
     .pipe(imagemin())
     .pipe(gulpif(options.env !== 'dev', rev()))
     .pipe(gulp.dest(sharedPaths.outputDir))

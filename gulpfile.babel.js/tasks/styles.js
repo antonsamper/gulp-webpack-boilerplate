@@ -11,6 +11,7 @@
 
 import autoprefixer from 'autoprefixer';
 import csso from 'gulp-csso';
+import cache from 'gulp-cached';
 import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
 import rev from 'gulp-rev';
@@ -38,6 +39,7 @@ export default () => {
   return gulp
     .src(`${ sharedPaths.srcDir }/sass/*.scss`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
+    .pipe(gulpif(options.env === 'dev', cache('styles')))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([autoprefixer(autoprefixerConfig)]))
