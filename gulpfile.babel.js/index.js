@@ -31,7 +31,7 @@ global.options = {
  3. TASK LOADER
  *********************************************************************************/
 
-function createGulpTaks(name) {
+function createGulpTask(name) {
   name = name.replace('.js','');
   gulp.task(name, () => {
     return require(`${__dirname}/tasks/${name}`).default();
@@ -39,5 +39,5 @@ function createGulpTaks(name) {
 }
 
 fs.readdirSync(`${__dirname}/tasks/`).forEach(function (filename, i) {
-  createGulpTaks(filename);
+  createGulpTask(filename);
 });
