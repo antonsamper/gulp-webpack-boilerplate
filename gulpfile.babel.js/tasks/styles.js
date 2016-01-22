@@ -26,13 +26,12 @@ import sourcemaps from 'gulp-sourcemaps';
 export default () => {
 
   const autoprefixerConfig = {
-    add: false,
     browsers: [
       'IE >= 9',
       'last 1 Firefox versions',
       'last 1 Chrome versions',
       'last 1 Safari versions',
-      'iOS >= 6.1'
+      'iOS >= 7.1'
     ]
   };
 
