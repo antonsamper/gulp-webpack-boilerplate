@@ -14,7 +14,7 @@ A clean and simple starter ES6 boilerplate for single page applications using gu
 - [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
 
 
-## Used by
+## Boilerplate used by
 <p>
   <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-signagerocket.png">
   <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-nowtv.png">
