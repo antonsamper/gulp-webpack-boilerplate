@@ -24,7 +24,6 @@ export default () => {
     global.gulpboilerplate.uglify = true;
     global.gulpboilerplate.csso = true;
     global.gulpboilerplate.htmlmin = true;
-    global.gulpboilerplate.karmaSingleRun = true;
     global.gulpboilerplate.rev = true;
 
     runSequence(

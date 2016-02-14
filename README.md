@@ -27,7 +27,7 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm run dev`     | Generate a development environment with watch, karma and browsersync
+`npm run dev`     | Generate a development environment with watch and browsersync
 `npm run prod`    | Outputs minified production code, asset revisions and run unit tests
 `npm run test`    | Run unit tests
 
@@ -37,7 +37,7 @@ Task Name         | Description
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`gulp`            | Generate a development environment with watch, karma and browsersync
+`gulp`            | Generate a development environment with watch and browsersync
 `gulp prod`       | Outputs minified production code, asset revisions and run unit tests
 
 ###### Individual Tasks

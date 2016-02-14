@@ -25,11 +25,9 @@ export default () => {
     global.gulpboilerplate.uglify = false;
     global.gulpboilerplate.csso = false;
     global.gulpboilerplate.htmlmin = false;
-    global.gulpboilerplate.karmaSingleRun = false;
     global.gulpboilerplate.rev = false;
 
     runSequence(
-        'karma',
         'clean',
         'iconfont',
         'styles',

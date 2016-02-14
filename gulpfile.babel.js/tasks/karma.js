@@ -18,11 +18,9 @@ import karma from 'karma';
 
 export default () => {
 
-    const runType = gulpboilerplate.karmaSingleRun;
-
     let server = new karma.Server({
         configFile: `${__dirname}/../config/karma.conf.js`,
-        singleRun: (runType) ? runType : true
+        singleRun: true
     });
 
     return server.start();
