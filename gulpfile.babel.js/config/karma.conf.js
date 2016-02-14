@@ -19,6 +19,11 @@ var sharedPaths = require('../shared/paths.js');
 module.exports = config => {
 
     var basePath = `${__dirname}/../..`;
+    var reporters = ['spec'];
+    try {
+        if (gulpboilerplate.coverage) reporters.push('coverage');
+    } catch (e) {
+    }
 
     config.set({
         singleRun: true,
@@ -38,7 +43,7 @@ module.exports = config => {
             'src/js/**/*.js': ['babel'],
             'src/js/**/!(*spec).js': ['coverage']
         },
-        reporters: ['spec', 'coverage'],
+        reporters: reporters,
         coverageReporter: {
             reporters: [{
                 type: 'html',

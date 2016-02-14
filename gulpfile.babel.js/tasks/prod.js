@@ -25,6 +25,7 @@ export default () => {
     global.gulpboilerplate.csso = true;
     global.gulpboilerplate.htmlmin = true;
     global.gulpboilerplate.rev = true;
+    global.gulpboilerplate.coverage = true;
 
     runSequence(
         'clean',
