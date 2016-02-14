@@ -38,7 +38,6 @@ export default () => {
   return gulp
     .src(`${ sharedPaths.srcDir }/sass/*.scss`)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulpif(options.env === 'dev', cache('styles')))
     .pipe(gulpif(options.env === 'dev', sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([autoprefixer(autoprefixerConfig)]))
