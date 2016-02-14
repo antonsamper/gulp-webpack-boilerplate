@@ -13,6 +13,12 @@ A clean and simple starter ES6 boilerplate for single page applications using gu
 ###### Boilerplate variations
 - [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
 
+## Used by
+<p>
+  <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
+  <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
+</p>
+
 ## Installation and Usage
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks, for example:
 
