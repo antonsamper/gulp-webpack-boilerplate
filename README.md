@@ -29,7 +29,7 @@ Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
 `npm run dev`     | Generate a development environment with watch and browsersync
 `npm run prod`    | Outputs minified production code, asset revisions and run unit tests
-`npm run test`    | Run unit tests
+`npm test`        | Run unit tests
 
 ## Gulp Tasks
 
