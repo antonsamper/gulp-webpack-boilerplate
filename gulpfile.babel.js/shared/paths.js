@@ -8,7 +8,7 @@
  1. EXPORTS
  *********************************************************************************/
 
-export default {
+module.exports = {
   srcDir: 'src',
   srcIndex: 'src/index.html',
   srcImages: ['src/**/*.{jpg,png,gif,svg}', '!src/fonts/**/*.svg'],
