@@ -22,9 +22,7 @@ global.gulp = gulp;
 global.plumber = plumber;
 global.sharedPaths = sharedPaths;
 global.sharedEvents = events;
-global.options = {
-  env: 'production'
-};
+global.gulpboilerplate = {};
 
 
 /*********************************************************************************

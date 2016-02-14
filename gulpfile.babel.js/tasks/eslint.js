@@ -22,7 +22,7 @@ export default () => {
   return gulp
     .src(sharedPaths.eslintSrc)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulpif(options.env === 'dev', cache('eslint')))
+    .pipe(gulpif(gulpboilerplate.cache, cache('eslint')))
     .pipe(eslint())
     .pipe(eslint.format());
 };

@@ -23,10 +23,10 @@ export default () => {
   return gulp
     .src(sharedPaths.srcImages)
     .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulpif(options.env === 'dev', cache('imagemin')))
+    .pipe(gulpif(gulpboilerplate.cache, cache('imagemin')))
     .pipe(imagemin())
-    .pipe(gulpif(options.env !== 'dev', rev()))
+    .pipe(gulpif(gulpboilerplate.rev, rev()))
     .pipe(gulp.dest(sharedPaths.outputDir))
-    .pipe(gulpif(options.env !== 'dev', rev.manifest()))
-    .pipe(gulpif(options.env !== 'dev', gulp.dest(sharedPaths.outputDir)));
+    .pipe(gulpif(gulpboilerplate.rev, rev.manifest()))
+    .pipe(gulpif(gulpboilerplate.rev, gulp.dest(sharedPaths.outputDir)));
 };

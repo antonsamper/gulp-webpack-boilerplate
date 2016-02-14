@@ -20,7 +20,7 @@ export default () => {
 
   let server = new karma.Server({
     configFile: `${__dirname}/../config/karma.conf.js`,
-    singleRun: options.env !== 'dev'
+    singleRun: gulpboilerplate.karmaSingleRun
   });
 
   return server.start();

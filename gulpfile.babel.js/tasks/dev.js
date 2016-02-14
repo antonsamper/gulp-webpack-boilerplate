@@ -19,7 +19,14 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-  global.options.env = 'dev';
+  global.gulpboilerplate.cache = true;
+  global.gulpboilerplate.sourcemaps = true;
+  global.gulpboilerplate.concat = false;
+  global.gulpboilerplate.uglify = false;
+  global.gulpboilerplate.csso = false;
+  global.gulpboilerplate.htmlmin = false;
+  global.gulpboilerplate.karmaSingleRun = false;
+  global.gulpboilerplate.rev = false;
 
   runSequence(
     'karma',

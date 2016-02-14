@@ -17,6 +17,16 @@ import runSequence from 'run-sequence';
  *********************************************************************************/
 
 export default () => {
+
+  global.gulpboilerplate.cache = false;
+  global.gulpboilerplate.sourcemaps = false;
+  global.gulpboilerplate.concat = true;
+  global.gulpboilerplate.uglify = true;
+  global.gulpboilerplate.csso = true;
+  global.gulpboilerplate.htmlmin = true;
+  global.gulpboilerplate.karmaSingleRun = true;
+  global.gulpboilerplate.rev = true;
+
   runSequence(
     'clean',
     'iconfont',
@@ -28,4 +38,5 @@ export default () => {
     'move',
     'karma'
   );
+
 };
