@@ -8,7 +8,8 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import bowerFiles from 'main-bower-files';
+var bowerFiles = require('main-bower-files');
+var sharedPaths = require('../shared/paths.js');
 
 
 /*********************************************************************************
@@ -17,12 +18,16 @@ import bowerFiles from 'main-bower-files';
 
 module.exports = config => {
 
-  let basePath = `${__dirname}/../..`;
+  var basePath = `${__dirname}/../..`;
 
   config.set({
     basePath: basePath,
     frameworks: ['jasmine'],
-    files: bowerFiles().concat([
+    files: bowerFiles({
+      paths: {
+        bowerDirectory: `${basePath}/bower_components`,
+        bowerJson: `${basePath}/bower.json`
+      }}).concat([
       'node_modules/babel-polyfill/dist/polyfill.js',
       `${sharedPaths.srcDir}/js/**/*.js`
     ]),
