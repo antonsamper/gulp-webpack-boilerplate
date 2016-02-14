@@ -13,12 +13,6 @@ A clean and simple starter ES6 boilerplate for single page applications using gu
 ###### Boilerplate variations
 - [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
 
-## Used by
-<p>
-  <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
-  <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
-</p>
-
 ## Installation and Usage
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks, for example:
 
@@ -33,9 +27,9 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm run prod`    | Outputs minified production code, asset revisions and run unit tests
 `npm run dev`     | Generate a development environment with watch, karma and browsersync
-`npm run tests`   | Run unit tests
+`npm run prod`    | Outputs minified production code, asset revisions and run unit tests
+`npm run test`    | Run unit tests
 
 ## Gulp Tasks
 
@@ -43,8 +37,8 @@ Task Name         | Description
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`gulp`            | Outputs minified production code, asset revisions and run unit tests
-`gulp dev`        | Generate a development environment with watch, karma and browsersync
+`gulp`            | Generate a development environment with watch, karma and browsersync
+`gulp prod`       | Outputs minified production code, asset revisions and run unit tests
 
 ###### Individual Tasks
 

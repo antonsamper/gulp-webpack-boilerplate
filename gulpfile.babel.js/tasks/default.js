@@ -1,6 +1,6 @@
 /*
  * @title Default
- * @description A bundle task that generates production ready code
+ * @description A bundle task that generates a development environment
  * @example (cli) gulp
  */
 
@@ -9,6 +9,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import browserSync from 'browser-sync';
 import runSequence from 'run-sequence';
 
 
@@ -18,25 +19,32 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-  global.gulpboilerplate.cache = false;
-  global.gulpboilerplate.sourcemaps = false;
-  global.gulpboilerplate.concat = true;
-  global.gulpboilerplate.uglify = true;
-  global.gulpboilerplate.csso = true;
-  global.gulpboilerplate.htmlmin = true;
-  global.gulpboilerplate.karmaSingleRun = true;
-  global.gulpboilerplate.rev = true;
+    global.gulpboilerplate.cache = true;
+    global.gulpboilerplate.sourcemaps = true;
+    global.gulpboilerplate.concat = false;
+    global.gulpboilerplate.uglify = false;
+    global.gulpboilerplate.csso = false;
+    global.gulpboilerplate.htmlmin = false;
+    global.gulpboilerplate.karmaSingleRun = false;
+    global.gulpboilerplate.rev = false;
 
-  runSequence(
-    'clean',
-    'iconfont',
-    'styles',
-    'eslint',
-    'scripts',
-    ['minifyHtml', 'imagemin'],
-    'revReplace',
-    'move',
-    'karma'
-  );
+    runSequence(
+        'karma',
+        'clean',
+        'iconfont',
+        'styles',
+        'eslint',
+        'scripts',
+        ['minifyHtml', 'imagemin'],
+        'move',
+        'server'
+    );
 
-};
+    gulp.watch(sharedPaths.eslintSrc, ['eslint']);
+    gulp.watch(sharedPaths.concatSrc, ['scripts']);
+    gulp.watch(sharedPaths.srcImages, ['imagemin']);
+    gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
+    gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
+    gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['styles']);
+
+}

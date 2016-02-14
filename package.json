@@ -6,8 +6,8 @@
     "repository": "https://github.com/antonsamper/gulp-boilerplate",
     "description": "gulp.js Boilerplate",
     "scripts": {
-        "prod": "gulp",
-        "dev": "gulp dev",
+        "dev": "gulp",
+        "prod": "gulp prod",
         "test": "gulp karma",
         "postinstall": "bower i",
         "release-patch": "release-it --non-interactive patch",
