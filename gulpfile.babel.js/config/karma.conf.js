@@ -31,7 +31,7 @@ module.exports = config => {
       'node_modules/babel-polyfill/dist/polyfill.js',
       `${sharedPaths.srcDir}/js/**/*.js`
     ]),
-    browsers: ['PhantomJS'],
+      browsers: ['Chrome'],
     preprocessors: {
       'src/js/**/*.js': ['babel'],
       'src/js/**/!(*spec).js': ['coverage']
@@ -45,14 +45,13 @@ module.exports = config => {
           return browser.toLowerCase().split(/[ /-]/)[0];
         }
       }, {
-        type: 'text-summary'
+        'text-summary'
       }]
     },
-    babelPreprocessor: {
-      options: {
-        sourceMap: 'inline'
-      }
+    {
+        {
+            'inline'
+        }
     }
-  });
-
-};
+})
+}
