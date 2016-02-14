@@ -19,8 +19,7 @@ import karma from 'karma';
 export default () => {
 
     let server = new karma.Server({
-        configFile: `${__dirname}/../config/karma.conf.js`,
-        singleRun: true
+        configFile: `${__dirname}/../config/karma.conf.js`
     });
 
     return server.start();

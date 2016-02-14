@@ -21,6 +21,7 @@ module.exports = config => {
     var basePath = `${__dirname}/../..`;
 
     config.set({
+        singleRun: true,
         basePath: basePath,
         frameworks: ['jasmine'],
         files: bowerFiles({
