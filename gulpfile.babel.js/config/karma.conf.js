@@ -60,5 +60,5 @@ module.exports = config => {
                 sourceMap: 'inline'
             }
         }
-    })
+    });
 };

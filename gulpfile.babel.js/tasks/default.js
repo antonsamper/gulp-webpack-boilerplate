@@ -45,4 +45,4 @@ export default () => {
     gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
     gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['styles']);
 
-}
+};
