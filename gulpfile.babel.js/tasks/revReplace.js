@@ -9,9 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import del from 'del';
-import revReplace from 'gulp-rev-replace';
-import runSequence from 'run-sequence';
+import sharedPaths  from '../shared/paths.js';
+import sharedEvents from '../shared/events.js';
+import del          from 'del';
+import gulp         from 'gulp';
+import plumber      from 'gulp-plumber';
+import revReplace   from 'gulp-rev-replace';
+import runSequence  from 'run-sequence';
 
 
 /*********************************************************************************
