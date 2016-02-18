@@ -32,6 +32,6 @@ export default () => {
             ignorePath: sharedPaths.outputDir,
             addRootSlash: false
         }))
-        .pipe(gulpif(gulpboilerplate.htmlmin, htmlmin({collapseWhitespace: true})))
+        .pipe(gulpif(process.env.htmlmin, htmlmin({collapseWhitespace: true})))
         .pipe(gulp.dest(sharedPaths.outputDir));
 };

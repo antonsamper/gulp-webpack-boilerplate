@@ -26,7 +26,7 @@ export default () => {
     return gulp
         .src(sharedPaths.eslintSrc)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(gulpboilerplate.cache, cache('eslint')))
+        .pipe(gulpif(process.env.cache, cache('eslint')))
         .pipe(eslint())
         .pipe(eslint.format());
 };

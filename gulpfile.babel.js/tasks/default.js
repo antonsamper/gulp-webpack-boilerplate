@@ -21,13 +21,17 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    global.gulpboilerplate.cache = true;
-    global.gulpboilerplate.sourcemaps = true;
-    global.gulpboilerplate.concat = false;
-    global.gulpboilerplate.uglify = false;
-    global.gulpboilerplate.csso = false;
-    global.gulpboilerplate.htmlmin = false;
-    global.gulpboilerplate.rev = false;
+    env({
+        vars: {
+            cache: true,
+            sourcemaps: true,
+            concat: false,
+            uglify: false,
+            csso: false,
+            htmlmin: false,
+            rev: false
+        }
+    });
 
     runSequence(
         'clean',

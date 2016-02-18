@@ -7,35 +7,21 @@
  1. IMPORTS
  *********************************************************************************/
 
-import fs from 'fs';
+import fs   from 'fs';
 import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import sharedPaths from './shared/paths.js';
-import events from './shared/events.js';
 
 
 /*********************************************************************************
- 2. GLOBALS
- *********************************************************************************/
-
-global.gulp = gulp;
-global.plumber = plumber;
-global.sharedPaths = sharedPaths;
-global.sharedEvents = events;
-global.gulpboilerplate = {};
-
-
-/*********************************************************************************
- 3. TASK LOADER
+ 2. TASK LOADER
  *********************************************************************************/
 
 function createGulpTask(name) {
-  name = name.replace('.js','');
-  gulp.task(name, () => {
-    return require(`${__dirname}/tasks/${name}`).default();
-  });
+    name = name.replace('.js', '');
+    gulp.task(name, () => {
+        return require(`${__dirname}/tasks/${name}`).default();
+    });
 }
 
 fs.readdirSync(`${__dirname}/tasks/`).forEach(function (filename, i) {
-  createGulpTask(filename);
+    createGulpTask(filename);
 });

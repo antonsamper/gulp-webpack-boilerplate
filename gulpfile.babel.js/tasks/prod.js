@@ -9,6 +9,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import env         from 'gulp-env';
 import runSequence from 'run-sequence';
 
 
@@ -18,14 +19,18 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    global.gulpboilerplate.cache = false;
-    global.gulpboilerplate.sourcemaps = false;
-    global.gulpboilerplate.concat = true;
-    global.gulpboilerplate.uglify = true;
-    global.gulpboilerplate.csso = true;
-    global.gulpboilerplate.htmlmin = true;
-    global.gulpboilerplate.rev = true;
-    global.gulpboilerplate.coverage = true;
+    env({
+        vars: {
+            cache: false,
+            sourcemaps: false,
+            concat: true,
+            uglify: true,
+            csso: true,
+            htmlmin: true,
+            rev: true,
+            coverage: true
+        }
+    });
 
     runSequence(
         'clean',
