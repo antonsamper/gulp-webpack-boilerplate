@@ -19,15 +19,15 @@ import sharedPaths from '../shared/paths.js';
 
 export default () => {
 
-  let bs = browserSync.create();
+    let bs = browserSync.create();
 
-  return bs.init([`${sharedPaths.outputDir}/**/*.{html,css,js}`], {
-    server: {
-      baseDir: sharedPaths.outputDir
-    },
-    open: true,
-    notify: false,
-    scrollProportionally: true
-  });
+    return bs.init([`${sharedPaths.outputDir}/**/*.{html,css,js}`], {
+        server: {
+            baseDir: sharedPaths.outputDir
+        },
+        open: true,
+        notify: false,
+        scrollProportionally: true
+    });
 
 };
