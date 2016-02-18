@@ -9,9 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import fontGenerator  from './generator.js';
+import sharedPaths    from '../../shared/paths.js';
+import sharedEvents   from '../../shared/events.js';
 import configIconfont from '../../config/iconfont.conf.js';
-import generator from './generator.js';
-import iconfont from 'gulp-iconfont';
+import gulp           from 'gulp';
+import iconfont       from 'gulp-iconfont';
+import plumber        from 'gulp-plumber';
 
 
 /*********************************************************************************
@@ -19,15 +23,15 @@ import iconfont from 'gulp-iconfont';
  *********************************************************************************/
 
 export default () => {
-  return gulp
-    .src(sharedPaths.srcIconFont)
-    .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(iconfont({
-      fontName: configIconfont.name,
-      appendUnicode: configIconfont.appendUnicode,
-      formats: configIconfont.formats,
-      timestamp:  Math.round(Date.now()/1000)
-    }))
-    .on('glyphs', generator)
-    .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`));
+    return gulp
+        .src(sharedPaths.srcIconFont)
+        .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(iconfont({
+            fontName: configIconfont.name,
+            appendUnicode: configIconfont.appendUnicode,
+            formats: configIconfont.formats,
+            timestamp: Math.round(Date.now() / 1000)
+        }))
+        .on('glyphs', fontGenerator)
+        .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`));
 };
