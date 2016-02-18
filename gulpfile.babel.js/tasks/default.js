@@ -9,7 +9,9 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import sharedPaths  from '../shared/paths.js';
 import browserSync from 'browser-sync';
+import gulp        from 'gulp';
 import runSequence from 'run-sequence';
 
 
