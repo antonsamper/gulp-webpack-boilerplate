@@ -9,13 +9,13 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import cache from 'gulp-cached';
-import eslint from 'gulp-eslint';
-import gulpif from 'gulp-if';
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import sharedPaths from '../shared/paths.js';
+import sharedPaths  from '../shared/paths.js';
 import sharedEvents from '../shared/events.js';
+import gulp         from 'gulp';
+import cache        from 'gulp-cached';
+import eslint       from 'gulp-eslint';
+import gulpif       from 'gulp-if';
+import plumber      from 'gulp-plumber';
 
 
 /*********************************************************************************
@@ -23,10 +23,10 @@ import sharedEvents from '../shared/events.js';
  *********************************************************************************/
 
 export default () => {
-  return gulp
-    .src(sharedPaths.eslintSrc)
-    .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulpif(gulpboilerplate.cache, cache('eslint')))
-    .pipe(eslint())
-    .pipe(eslint.format());
+    return gulp
+        .src(sharedPaths.eslintSrc)
+        .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(gulpif(gulpboilerplate.cache, cache('eslint')))
+        .pipe(eslint())
+        .pipe(eslint.format());
 };

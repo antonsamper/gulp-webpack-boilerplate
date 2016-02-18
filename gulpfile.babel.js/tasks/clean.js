@@ -9,8 +9,8 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import del from 'del';
 import sharedPaths from '../shared/paths.js';
+import del         from 'del';
 
 
 /*********************************************************************************
@@ -18,5 +18,5 @@ import sharedPaths from '../shared/paths.js';
  *********************************************************************************/
 
 export default () => {
-  return del.sync(sharedPaths.outputDir);
+    return del.sync(sharedPaths.outputDir);
 };
