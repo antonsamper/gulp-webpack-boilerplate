@@ -23,13 +23,14 @@ export default () => {
         vars: {
             gulpboilerplate: {
                 cache: false,
-                sourcemaps: false,
                 concat: true,
-                uglify: true,
+                coverage: true,
                 csso: true,
                 htmlmin: true,
                 rev: true,
-                coverage: true
+                sourcemaps: false,
+                uglify: true,
+                
             }
         }
     });
