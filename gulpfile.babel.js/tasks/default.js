@@ -9,9 +9,10 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import sharedPaths  from '../shared/paths.js';
+import sharedPaths from '../shared/paths.js';
 import browserSync from 'browser-sync';
 import gulp        from 'gulp';
+import env         from 'gulp-env';
 import runSequence from 'run-sequence';
 
 
@@ -23,13 +24,15 @@ export default () => {
 
     env({
         vars: {
-            cache: true,
-            sourcemaps: true,
-            concat: false,
-            uglify: false,
-            csso: false,
-            htmlmin: false,
-            rev: false
+            gulpboilerplate: {
+                cache: true,
+                sourcemaps: true,
+                concat: false,
+                uglify: false,
+                csso: false,
+                htmlmin: false,
+                rev: false
+            }
         }
     });
 

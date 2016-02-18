@@ -33,21 +33,21 @@ export default () => {
     let libs = gulp
         .src(bowerFiles('**/*.js'))
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.uglify, uglify()))
-        .pipe(gulpif(process.env.concat, concat('libs.min.js')))
-        .pipe(gulpif(process.env.rev, rev()))
+        .pipe(gulpif(process.env.gulpboilerplateuglify, uglify()))
+        .pipe(gulpif(process.env.gulpboilerplateconcat, concat('libs.min.js')))
+        .pipe(gulpif(process.env.gulpboilerplaterev, rev()))
         .pipe(gulp.dest(`${ sharedPaths.outputDir }/js/bower`));
 
     let app = gulp
         .src(sharedPaths.concatSrc)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.cache, cache('scripts')))
-        .pipe(gulpif(process.env.sourcemaps, sourcemaps.init()))
+        .pipe(gulpif(process.env.gulpboilerplatecache, cache('scripts')))
+        .pipe(gulpif(process.env.gulpboilerplatesourcemaps, sourcemaps.init()))
         .pipe(babel())
-        .pipe(gulpif(process.env.sourcemaps, sourcemaps.write()))
-        .pipe(gulpif(process.env.uglify, uglify()))
-        .pipe(gulpif(process.env.concat, concat('app.min.js')))
-        .pipe(gulpif(process.env.rev, rev()))
+        .pipe(gulpif(process.env.gulpboilerplatesourcemaps, sourcemaps.write()))
+        .pipe(gulpif(process.env.gulpboilerplateuglify, uglify()))
+        .pipe(gulpif(process.env.gulpboilerplateconcat, concat('app.min.js')))
+        .pipe(gulpif(process.env.gulpboilerplaterev, rev()))
         .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`));
 
     return merge(libs, app);
