@@ -25,20 +25,20 @@ import runSequence  from 'run-sequence';
 let manifest = `${ sharedPaths.outputDir }/rev-manifest.json`;
 
 gulp.task('revReplaceManifest', () => {
-  return gulp
-    .src(`${ sharedPaths.outputDir }/**/*.{html,css,js}`)
-    .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(revReplace({manifest: gulp.src(manifest)}))
-    .pipe(gulp.dest(sharedPaths.outputDir));
+    return gulp
+        .src(`${ sharedPaths.outputDir }/**/*.{html,css,js}`)
+        .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(revReplace({manifest: gulp.src(manifest)}))
+        .pipe(gulp.dest(sharedPaths.outputDir));
 });
 
 gulp.task('revDeleteManifest', () => {
-  return del.sync(manifest);
+    return del.sync(manifest);
 });
 
 export default () => {
-  runSequence(
-    'revReplaceManifest',
-    'revDeleteManifest'
-  );
+    runSequence(
+        'revReplaceManifest',
+        'revDeleteManifest'
+    );
 };
