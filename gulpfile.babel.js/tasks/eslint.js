@@ -12,6 +12,10 @@
 import cache from 'gulp-cached';
 import eslint from 'gulp-eslint';
 import gulpif from 'gulp-if';
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import sharedPaths from '../shared/paths.js';
+import sharedEvents from '../shared/events.js';
 
 
 /*********************************************************************************
