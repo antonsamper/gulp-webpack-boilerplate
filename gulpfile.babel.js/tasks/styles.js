@@ -9,14 +9,18 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+import sharedPaths  from '../shared/paths.js';
+import sharedEvents from '../shared/events.js';
 import autoprefixer from 'autoprefixer';
-import csso from 'gulp-csso';
-import cache from 'gulp-cached';
-import gulpif from 'gulp-if';
-import postcss from 'gulp-postcss';
-import rev from 'gulp-rev';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
+import gulp         from 'gulp';
+import cache        from 'gulp-cached';
+import csso         from 'gulp-csso';
+import gulpif       from 'gulp-if';
+import postcss      from 'gulp-postcss';
+import plumber      from 'gulp-plumber';
+import rev          from 'gulp-rev';
+import sass         from 'gulp-sass';
+import sourcemaps   from 'gulp-sourcemaps';
 
 
 /*********************************************************************************
@@ -25,24 +29,24 @@ import sourcemaps from 'gulp-sourcemaps';
 
 export default () => {
 
-  const autoprefixerConfig = {
-    browsers: [
-      'IE >= 9',
-      'last 1 Firefox versions',
-      'last 1 Chrome versions',
-      'last 1 Safari versions',
-      'iOS >= 7.1'
-    ]
-  };
+    const autoprefixerConfig = {
+        browsers: [
+            'IE >= 9',
+            'last 1 Firefox versions',
+            'last 1 Chrome versions',
+            'last 1 Safari versions',
+            'iOS >= 7.1'
+        ]
+    };
 
-  return gulp
-    .src(`${ sharedPaths.srcDir }/sass/*.scss`)
-    .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulpif(gulpboilerplate.sourcemaps, sourcemaps.init()))
-    .pipe(sass())
-    .pipe(postcss([autoprefixer(autoprefixerConfig)]))
-    .pipe(gulpif(gulpboilerplate.sourcemaps, sourcemaps.write()))
-    .pipe(gulpif(gulpboilerplate.csso, csso()))
-    .pipe(gulpif(gulpboilerplate.rev, rev()))
-    .pipe(gulp.dest(sharedPaths.outputDir + '/css'));
+    return gulp
+        .src(`${ sharedPaths.srcDir }/sass/*.scss`)
+        .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(gulpif(gulpboilerplate.sourcemaps, sourcemaps.init()))
+        .pipe(sass())
+        .pipe(postcss([autoprefixer(autoprefixerConfig)]))
+        .pipe(gulpif(gulpboilerplate.sourcemaps, sourcemaps.write()))
+        .pipe(gulpif(gulpboilerplate.csso, csso()))
+        .pipe(gulpif(gulpboilerplate.rev, rev()))
+        .pipe(gulp.dest(sharedPaths.outputDir + '/css'));
 };
