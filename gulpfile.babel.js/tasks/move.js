@@ -20,10 +20,10 @@ import plumber      from 'gulp-plumber';
  *********************************************************************************/
 
 export default () => {
-  return gulp
-    .src(`./${ sharedPaths.srcDir }/fonts/*.{eot,svg,ttf,woff,woff2}`, {
-      base: `./${ sharedPaths.srcDir }`
-    })
-    .pipe(plumber({errorHandler: sharedEvents.onError}))
-    .pipe(gulp.dest(sharedPaths.outputDir));
+    return gulp
+        .src(`./${ sharedPaths.srcDir }/fonts/*.{eot,svg,ttf,woff,woff2}`, {
+            base: `./${ sharedPaths.srcDir }`
+        })
+        .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(gulp.dest(sharedPaths.outputDir));
 };
