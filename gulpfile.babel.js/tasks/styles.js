@@ -42,11 +42,11 @@ export default () => {
     return gulp
         .src(`${ sharedPaths.srcDir }/sass/*.scss`)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.gulpboilerplatesourcemaps, sourcemaps.init()))
+        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.init()))
         .pipe(sass())
         .pipe(postcss([autoprefixer(autoprefixerConfig)]))
-        .pipe(gulpif(process.env.gulpboilerplatesourcemaps, sourcemaps.write()))
-        .pipe(gulpif(process.env.gulpboilerplatecsso, csso()))
-        .pipe(gulpif(process.env.gulpboilerplaterev, rev()))
+        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.write()))
+        .pipe(gulpif(process.env.GULP_CSSO, csso()))
+        .pipe(gulpif(process.env.GULP_REV, rev()))
         .pipe(gulp.dest(sharedPaths.outputDir + '/css'));
 };

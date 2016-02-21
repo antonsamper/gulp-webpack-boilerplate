@@ -15,7 +15,6 @@ import gulp         from 'gulp';
 import cache        from 'gulp-cached';
 import eslint       from 'gulp-eslint';
 import gulpif       from 'gulp-if';
-import plumber      from 'gulp-plumber';
 
 
 /*********************************************************************************
@@ -25,8 +24,8 @@ import plumber      from 'gulp-plumber';
 export default () => {
     return gulp
         .src(sharedPaths.eslintSrc)
-        .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.gulpboilerplatecache, cache('eslint')))
+        .pipe(gulpif(process.env.GULP_CACHE, cache('eslint')))
         .pipe(eslint())
-        .pipe(eslint.format());
+        .pipe(eslint.format())
+        .pipe(gulpif(process.env.GULP_STRICT_ESLINT, eslint.failAfterError()));
 };

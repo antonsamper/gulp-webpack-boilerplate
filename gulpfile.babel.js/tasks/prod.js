@@ -21,17 +21,15 @@ export default () => {
 
     env({
         vars: {
-            gulpboilerplate: {
-                cache: false,
-                concat: true,
-                coverage: true,
-                csso: true,
-                htmlmin: true,
-                rev: true,
-                sourcemaps: false,
-                uglify: true,
-                
-            }
+            GULP_CACHE: false,
+            GULP_CONCAT: true,
+            GULP_COVERAGE: true,
+            GULP_CSSO: true,
+            GULP_HTMLMIN: true,
+            GULP_REV: true,
+            GULP_SOURCEMAPS: false,
+            GULP_STRICT_ESLINT: true,
+            GULP_UGLIFY: true
         }
     });
 
