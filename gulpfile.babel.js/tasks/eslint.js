@@ -26,6 +26,8 @@ export default () => {
         .src(sharedPaths.eslintSrc)
         .pipe(gulpif(process.env.GULP_CACHE, cache('eslint')))
         .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(gulpif(process.env.GULP_STRICT_ESLINT, eslint.failAfterError()));
+        .pipe(eslint.format());
+    // todo break build on eslint errors
+    // https://github.com/adametry/gulp-eslint/issues/135
+    //.pipe(gulpif(process.env.GULP_STRICT_ESLINT, eslint.failAfterError()));
 };
