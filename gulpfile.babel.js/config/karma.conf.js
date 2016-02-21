@@ -20,10 +20,10 @@ module.exports = config => {
 
     var basePath = `${__dirname}/../..`;
     var reporters = ['spec'];
-    try {
-        if (gulpboilerplate.coverage) reporters.push('coverage');
-    } catch (e) {
-    }
+
+    // Optional add coverage
+    if (process.env.GULP_COVERAGE) reporters.push('coverage');
+
 
     config.set({
         singleRun: true,
