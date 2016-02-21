@@ -24,16 +24,18 @@ export default () => {
 
     env({
         vars: {
+            GULP_IGNORE_ERRORS: true,
             GULP_CACHE: true,
             GULP_CONCAT: false,
+            GULP_COVERAGE: false,
             GULP_CSSO: false,
             GULP_HTMLMIN: false,
             GULP_REV: false,
             GULP_SOURCEMAPS: true,
-            GULP_STRICT_ESLINT: false,
             GULP_UGLIFY: false
         }
     });
+
 
     runSequence(
         'clean',

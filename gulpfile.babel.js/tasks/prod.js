@@ -21,6 +21,7 @@ export default () => {
 
     env({
         vars: {
+            GULP_IGNORE_ERRORS: false,
             GULP_CACHE: false,
             GULP_CONCAT: true,
             GULP_COVERAGE: true,
@@ -28,7 +29,6 @@ export default () => {
             GULP_HTMLMIN: true,
             GULP_REV: true,
             GULP_SOURCEMAPS: false,
-            GULP_STRICT_ESLINT: true,
             GULP_UGLIFY: true
         }
     });
