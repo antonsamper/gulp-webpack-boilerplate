@@ -29,5 +29,5 @@ export default () => {
         .pipe(eslint.format());
     // todo break build on eslint errors
     // https://github.com/adametry/gulp-eslint/issues/135
-    //.pipe(gulpif(process.env.GULP_STRICT_ESLINT, eslint.failAfterError()));
+    //.pipe(gulpif(process.env.GULP_IGNORE_ERRORS, eslint.failAfterError()));
 };

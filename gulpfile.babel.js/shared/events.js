@@ -16,8 +16,12 @@ import chalk from 'chalk';
  *********************************************************************************/
 
 export default {
-  onError: function (err) {
-    console.error(chalk.white.bgRed.bold(`${err.plugin}: ${err.message}`));
-    this.emit('end');
-  }
+    onError: function (err) {
+        console.error(chalk.white.bgRed.bold(`${err.plugin}: ${err.message}`));
+        if (process.env.GULP_IGNORE_ERRORS === 'true') {
+            this.emit('end');
+        } else {
+            process.exit(1);
+        }
+    }
 };
