@@ -24,7 +24,6 @@ module.exports = config => {
     // Optional add coverage
     if (process.env.GULP_COVERAGE) reporters.push('coverage');
 
-
     config.set({
         singleRun: true,
         basePath: basePath,
