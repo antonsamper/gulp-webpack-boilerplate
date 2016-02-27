@@ -7,6 +7,7 @@
     "description": "gulp.js Boilerplate",
     "scripts": {
         "dev": "gulp",
+        "start": "gulp",
         "prod": "gulp prod",
         "test": "gulp karma",
         "postinstall": "bower i",

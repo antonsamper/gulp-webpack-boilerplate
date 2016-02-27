@@ -38,7 +38,8 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm run dev`     | Generate a development environment with watch and browsersync
+`npm start`       | Generate a development environment with watch and browsersync
+`npm run dev`     | Same as `npm start`
 `npm run prod`    | Outputs minified production code, asset revisions and run unit tests
 `npm test`        | Run unit tests
 
@@ -138,4 +139,3 @@ The three main functions of `release-it` have been mapped as custom npm scripts.
  *  `npm run release-patch`
  *  `npm run release-minor`
  *  `npm run release-major`
-      
