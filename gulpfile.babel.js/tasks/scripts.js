@@ -18,7 +18,6 @@ import concat       from 'gulp-concat';
 import gulpif       from 'gulp-if';
 import plumber      from 'gulp-plumber';
 import rev          from 'gulp-rev';
-import sourcemaps   from 'gulp-sourcemaps';
 import uglify       from 'gulp-uglify';
 import bowerFiles   from 'main-bower-files';
 import merge        from 'merge-stream';
@@ -42,9 +41,7 @@ export default () => {
         .src(sharedPaths.concatSrc)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(gulpif(process.env.GULP_CACHE, cache('scripts')))
-        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.init()))
         .pipe(babel())
-        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.write()))
         .pipe(gulpif(process.env.GULP_UGLIFY, uglify()))
         .pipe(gulpif(process.env.GULP_CONCAT, concat('app.min.js')))
         .pipe(gulpif(process.env.GULP_REV, rev()))
