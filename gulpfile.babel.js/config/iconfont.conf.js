@@ -9,7 +9,7 @@
  *********************************************************************************/
 
 export default {
-  name: 'iconfont',
-  appendUnicode: true,
-  formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
+    name: 'iconfont',
+    prependUnicode: true,
+    formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
 };
