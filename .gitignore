@@ -14,3 +14,6 @@ src/sass/generated
 
 # Webstorm project files
 .idea
+
+# OSX files
+.DS_Store
