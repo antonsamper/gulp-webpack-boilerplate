@@ -19,8 +19,6 @@ module.exports = function () {
         imagesSrcFiles: `${srcBase}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${distBase}/images`,
         outputDir: distBase,
-
-
         eslintSrcFiles: [
             './.eslintrc',
             './bower.json',
@@ -28,14 +26,10 @@ module.exports = function () {
             `${srcBase}/js/**/*.js`,
             './gulpfile.babel.js/**/*.js'
         ],
-
-
         fontsIconSrcFiles: `${srcBase}/fonts/iconfont/*.svg`,
         fontsSrcFiles: `${srcBase}/fonts/*.{eot,svg,ttf,woff,woff2}`,
         fontsOutputDir: `${distBase}/fonts`,
-
         revManifest: `${distBase}/rev-manifest.json`,
-
         scriptsSrcFiles: [
             `${srcBase}/js/**/*.js`,
             `!${srcBase}/js/**/*.spec.js`
@@ -45,11 +39,9 @@ module.exports = function () {
             `${distBase}/js/app.js`,
             `${distBase}/js/**/*.js`
         ],
+        outputFiles: [`${distBase}/**/*.{html,css,js}`],
         scriptsOutputDir: `${distBase}/js`,
         scriptsLibsOutputDir: `${distBase}/js/bower`,
-
-        outputFiles: [`${distBase}/**/*.{html,css,js}`],
-
         stylesMainSrcFiles: [`${srcBase}/sass/*.scss`],
         stylesAllSrcFiles: [`${srcBase}/sass/**/*.scss`],
         stylesSrcGeneratedDir: `${srcBase}/sass/generated`,
