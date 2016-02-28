@@ -1,6 +1,6 @@
 /*
  * @title Paths
- * @description An object containing shared application paths
+ * @description An function that returns an object containing file paths
  */
 
 
@@ -8,46 +8,53 @@
  1. EXPORTS
  *********************************************************************************/
 
-module.exports = {
-    srcDir: './src',
-    srcIndex: './src/index.html',
-    srcImages: ['./src/**/*.{jpg,png,gif,svg}', '!./src/fonts/**/*.svg'],
-    outputDir: './dist/',
+module.exports = function () {
+
+    const srcBase = './src';
+    const distBase = './dist';
+
+    return {
+        srcDir: srcBase,
+        srcIndex: `${srcBase}/index.html`,
+        imagesSrcFiles: `${srcBase}/images/**/*.{jpg,png,gif,svg}`,
+        imagesOutputFiles: `${distBase}/images`,
+        outputDir: distBase,
 
 
-    eslintSrcFiles: [
-        './.eslintrc',
-        './bower.json',
-        './package.json',
-        './src/js/**/*.js',
-        './gulpfile.babel.js/**/*.js'
-    ],
+        eslintSrcFiles: [
+            './.eslintrc',
+            './bower.json',
+            './package.json',
+            `${srcBase}/js/**/*.js`,
+            './gulpfile.babel.js/**/*.js'
+        ],
 
 
-    fontsIconSrcFiles: './src/fonts/iconfont/*.svg',
-    fontsSrcFiles: './src/fonts/*.{eot,svg,ttf,woff,woff2}',
-    fontsOutputDir: './dist/fonts',
+        fontsIconSrcFiles: `${srcBase}/fonts/iconfont/*.svg`,
+        fontsSrcFiles: `${srcBase}/fonts/*.{eot,svg,ttf,woff,woff2}`,
+        fontsOutputDir: `${distBase}/fonts`,
 
-    revManifest: './dist/rev-manifest.json',
+        revManifest: `${distBase}/rev-manifest.json`,
 
-    scriptsSrcFiles: [
-        './src/js/**/*.js',
-        '!./src/js/**/*.spec.js'
-    ],
-    scriptsOutputFiles: [
-        './dist/js/bower/**/*.js',
-        './dist/js/app.js',
-        './dist/js/**/*.js'
-    ],
-    scriptsOutputDir: './dist/js',
-    scriptsLibsOutputDir: './dist/js/bower',
+        scriptsSrcFiles: [
+            `${srcBase}/js/**/*.js`,
+            `!${srcBase}/js/**/*.spec.js`
+        ],
+        scriptsOutputFiles: [
+            `${distBase}/js/bower/**/*.js`,
+            `${distBase}/js/app.js`,
+            `${distBase}/js/**/*.js`
+        ],
+        scriptsOutputDir: `${distBase}/js`,
+        scriptsLibsOutputDir: `${distBase}/js/bower`,
 
-    outputFiles: ['./dist/**/*.{html,css,js}'],
+        outputFiles: [`${distBase}/**/*.{html,css,js}`],
 
-    stylesMainSrcFiles: ['./src/sass/*.scss'],
-    stylesAllSrcFiles: ['./src/sass/**/*.scss'],
-    stylesSrcGeneratedDir: './src/sass/generated',
-    stylesOutputFiles: ['./dist/css/*.css'],
-    stylesOutputDir: './dist/css'
+        stylesMainSrcFiles: [`${srcBase}/sass/*.scss`],
+        stylesAllSrcFiles: [`${srcBase}/sass/**/*.scss`],
+        stylesSrcGeneratedDir: `${srcBase}/sass/generated`,
+        stylesOutputFiles: [`${distBase}/css/*.css`],
+        stylesOutputDir: `${distBase}/css`
 
-};
+    };
+}();

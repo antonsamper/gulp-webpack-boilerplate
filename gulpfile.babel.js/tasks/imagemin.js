@@ -25,12 +25,12 @@ import rev          from 'gulp-rev';
 
 export default () => {
     return gulp
-        .src(sharedPaths.srcImages)
+        .src(sharedPaths.imagesSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(gulpif(process.env.GULP_CACHE, cache('imagemin')))
         .pipe(imagemin())
         .pipe(gulpif(process.env.GULP_REV, rev()))
-        .pipe(gulp.dest(sharedPaths.outputDir))
+        .pipe(gulp.dest(sharedPaths.imagesOutputFiles))
         .pipe(gulpif(process.env.GULP_REV, rev.manifest()))
         .pipe(gulpif(process.env.GULP_REV, gulp.dest(sharedPaths.outputDir)));
 };
