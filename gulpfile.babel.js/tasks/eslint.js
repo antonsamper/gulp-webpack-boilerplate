@@ -23,7 +23,7 @@ import gulpif       from 'gulp-if';
 
 export default () => {
     return gulp
-        .src(sharedPaths.eslintSrc)
+        .src(sharedPaths.eslintSrcFiles)
         .pipe(gulpif(process.env.GULP_CACHE, cache('eslint')))
         .pipe(eslint())
         .pipe(eslint.format());

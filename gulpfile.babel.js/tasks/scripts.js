@@ -35,20 +35,18 @@ export default () => {
         .pipe(gulpif(process.env.GULP_UGLIFY, uglify()))
         .pipe(gulpif(process.env.GULP_CONCAT, concat('libs.min.js')))
         .pipe(gulpif(process.env.GULP_REV, rev()))
-        .pipe(gulp.dest(`${ sharedPaths.outputDir }/js/bower`));
+        .pipe(gulp.dest(sharedPaths.scriptsLibsOutputDir));
 
     let app = gulp
-        .src(sharedPaths.concatSrc)
+        .src(sharedPaths.scriptsSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(gulpif(process.env.GULP_CACHE, cache('scripts')))
         .pipe(babel())
         .pipe(gulpif(process.env.GULP_UGLIFY, uglify()))
         .pipe(gulpif(process.env.GULP_CONCAT, concat('app.min.js')))
         .pipe(gulpif(process.env.GULP_REV, rev()))
-        .pipe(gulp.dest(`${ sharedPaths.outputDir }/js`));
+        .pipe(gulp.dest(sharedPaths.scriptsOutputDir));
 
     return merge(libs, app);
 
 };
-
-

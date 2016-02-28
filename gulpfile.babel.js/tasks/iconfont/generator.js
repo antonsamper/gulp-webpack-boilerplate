@@ -42,5 +42,5 @@ export default codepoints => {
         }))
         .pipe(swig())
         .pipe(rename(scssTemplate.replace('.swig', '')))
-        .pipe(gulp.dest(`${ sharedPaths.srcDir }/sass/components/`));
+        .pipe(gulp.dest(sharedPaths.stylesSrcGeneratedDir));
 };

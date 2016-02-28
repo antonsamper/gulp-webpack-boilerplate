@@ -21,7 +21,7 @@ import plumber      from 'gulp-plumber';
 
 export default () => {
     return gulp
-        .src(`./${ sharedPaths.srcDir }/fonts/*.{eot,svg,ttf,woff,woff2}`, {
+        .src(`./${ sharedPaths.fontsSrcFiles }`, {
             base: `./${ sharedPaths.srcDir }`
         })
         .pipe(plumber({errorHandler: sharedEvents.onError}))

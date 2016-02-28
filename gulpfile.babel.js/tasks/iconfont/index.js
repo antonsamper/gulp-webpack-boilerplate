@@ -24,7 +24,7 @@ import plumber        from 'gulp-plumber';
 
 export default () => {
     return gulp
-        .src(sharedPaths.srcIconFont)
+        .src(sharedPaths.fontsIconSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(iconfont({
             fontName: configIconfont.name,
@@ -33,5 +33,6 @@ export default () => {
             timestamp: Math.round(Date.now() / 1000)
         }))
         .on('glyphs', fontGenerator)
-        .pipe(gulp.dest(`${ sharedPaths.outputDir }/fonts`));
-};
+        .pipe(gulp.dest(sharedPaths.fontsOutputDir));
+}
+;

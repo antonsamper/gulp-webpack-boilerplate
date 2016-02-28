@@ -36,7 +36,6 @@ export default () => {
         }
     });
 
-
     runSequence(
         'clean',
         'iconfont',
@@ -48,11 +47,11 @@ export default () => {
         'server'
     );
 
-    gulp.watch(sharedPaths.eslintSrc, ['eslint']);
-    gulp.watch(sharedPaths.concatSrc, ['scripts']);
+    gulp.watch(sharedPaths.eslintSrcFiles, ['eslint']);
+    gulp.watch(sharedPaths.scriptsSrcFiles, ['scripts']);
     gulp.watch(sharedPaths.srcImages, ['imagemin']);
     gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
-    gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
-    gulp.watch(`${ sharedPaths.srcDir }/sass/**/*.scss`, ['styles']);
+    gulp.watch(sharedPaths.fontsIconSrcFiles, ['iconfont']);
+    gulp.watch(sharedPaths.stylesAllSrcFiles, ['styles']);
 
 };

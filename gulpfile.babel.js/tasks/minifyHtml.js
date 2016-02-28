@@ -26,10 +26,10 @@ export default () => {
     return gulp
         .src(sharedPaths.srcIndex)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(inject(gulp.src(sharedPaths.outputCss.concat(sharedPaths.outputJs), {
+        .pipe(inject(gulp.src(sharedPaths.stylesOutputFiles.concat(sharedPaths.scriptsOutputFiles), {
             read: false
         }), {
-            ignorePath: sharedPaths.outputDir,
+            ignorePath: sharedPaths.outputDir.replace('./',''),
             addRootSlash: false
         }))
         .pipe(gulpif(process.env.GULP_HTMLMIN, htmlmin({collapseWhitespace: true})))

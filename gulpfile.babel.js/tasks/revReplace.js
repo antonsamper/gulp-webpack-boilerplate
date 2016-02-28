@@ -22,11 +22,11 @@ import runSequence  from 'run-sequence';
  2. TASK
  *********************************************************************************/
 
-let manifest = `${ sharedPaths.outputDir }/rev-manifest.json`;
+let manifest = sharedPaths.revManifest;
 
 gulp.task('revReplaceManifest', () => {
     return gulp
-        .src(`${ sharedPaths.outputDir }/**/*.{html,css,js}`)
+        .src(sharedPaths.outputFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(revReplace({manifest: gulp.src(manifest)}))
         .pipe(gulp.dest(sharedPaths.outputDir));

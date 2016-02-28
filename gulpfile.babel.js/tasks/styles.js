@@ -40,7 +40,7 @@ export default () => {
     };
 
     return gulp
-        .src(`${ sharedPaths.srcDir }/sass/*.scss`)
+        .src(sharedPaths.stylesMainSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.init()))
         .pipe(sass())
@@ -48,5 +48,5 @@ export default () => {
         .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.write()))
         .pipe(gulpif(process.env.GULP_CSSO, csso()))
         .pipe(gulpif(process.env.GULP_REV, rev()))
-        .pipe(gulp.dest(sharedPaths.outputDir + '/css'));
+        .pipe(gulp.dest(sharedPaths.stylesOutputDir));
 };
