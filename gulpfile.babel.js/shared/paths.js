@@ -27,7 +27,7 @@ module.exports = function () {
             './gulpfile.babel.js/**/*.js'
         ],
         fontsIconSrcFiles: `${srcBase}/fonts/iconfont/*.svg`,
-        fontsSrcFiles: `${srcBase}/fonts/*.{eot,svg,ttf,woff,woff2}`,
+        fontsSrcFiles: `${srcBase}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
         fontsOutputDir: `${distBase}/fonts`,
         revManifest: `${distBase}/rev-manifest.json`,
         scriptsSrcFiles: [
