@@ -24,10 +24,10 @@ import gulpif       from 'gulp-if';
 export default () => {
     return gulp
         .src(sharedPaths.eslintSrcFiles)
-        .pipe(gulpif(process.env.GULP_CACHE, cache('eslint')))
+        .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('eslint')))
         .pipe(eslint())
         .pipe(eslint.format());
-    // todo break build on eslint errors
-    // https://github.com/adametry/gulp-eslint/issues/135
-    //.pipe(gulpif(process.env.GULP_IGNORE_ERRORS, eslint.failAfterError()));
+        // todo break build on eslint errors
+        // https://github.com/adametry/gulp-eslint/issues/135
+        //.pipe(gulpif(process.env.GULP_IGNORE_ERRORS === 'true', eslint.failAfterError()));
 };

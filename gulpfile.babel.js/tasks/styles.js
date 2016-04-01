@@ -42,11 +42,11 @@ export default () => {
     return gulp
         .src(sharedPaths.stylesMainSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.init()))
+        .pipe(gulpif(process.env.GULP_SOURCEMAPS === 'true', sourcemaps.init()))
         .pipe(sass())
         .pipe(postcss([autoprefixer(autoprefixerConfig)]))
-        .pipe(gulpif(process.env.GULP_SOURCEMAPS, sourcemaps.write()))
-        .pipe(gulpif(process.env.GULP_CSSO, csso()))
-        .pipe(gulpif(process.env.GULP_REV, rev()))
+        .pipe(gulpif(process.env.GULP_SOURCEMAPS === 'true', sourcemaps.write()))
+        .pipe(gulpif(process.env.GULP_CSSO === 'true', csso()))
+        .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.stylesOutputDir));
 };
