@@ -10,8 +10,8 @@
 
 module.exports = function () {
 
-    const srcBase = './src';
-    const distBase = './dist';
+    const srcBase =  'src';
+    const distBase = 'dist';
 
     return {
         srcDir: srcBase,
@@ -20,11 +20,11 @@ module.exports = function () {
         imagesOutputFiles: `${distBase}/images`,
         outputDir: distBase,
         eslintSrcFiles: [
-            './.eslintrc',
-            './bower.json',
-            './package.json',
+            '.eslintrc',
+            'bower.json',
+            'package.json',
             `${srcBase}/js/**/*.js`,
-            './gulpfile.babel.js/**/*.js'
+            'gulpfile.babel.js/**/*.js'
         ],
         fontsIconSrcFiles: `${srcBase}/fonts/iconfont/*.svg`,
         fontsSrcFiles: `${srcBase}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
@@ -47,6 +47,5 @@ module.exports = function () {
         stylesSrcGeneratedDir: `${srcBase}/sass/generated`,
         stylesOutputFiles: [`${distBase}/css/*.css`],
         stylesOutputDir: `${distBase}/css`
-
     };
 }();
