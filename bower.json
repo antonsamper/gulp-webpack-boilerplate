@@ -11,6 +11,6 @@
         "tests"
     ],
     "dependencies": {
-        "jquery": "components/jquery#2.1.4"
+        "jquery": "components/jquery#2.2.1"
     }
 }
