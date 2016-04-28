@@ -10,42 +10,46 @@
 
 module.exports = function () {
 
-    const srcBase =  'src';
-    const distBase = 'dist';
+    const srcDir =  'src';
+    const outputDir = 'dist';
+
+    const scriptsLibsFilename = 'libs.min.js';
+    const scriptsAppFilename = 'app.min.js';
 
     return {
-        srcDir: srcBase,
-        srcIndex: `${srcBase}/index.html`,
-        imagesSrcFiles: `${srcBase}/images/**/*.{jpg,png,gif,svg}`,
-        imagesOutputFiles: `${distBase}/images`,
-        outputDir: distBase,
+        srcDir,
+        srcIndex: `${srcDir}/index.html`,
+        imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
+        imagesOutputFiles: `${outputDir}/images`,
+        outputDir,
         eslintSrcFiles: [
             '.eslintrc',
             'bower.json',
             'package.json',
-            `${srcBase}/js/**/*.js`,
+            `${srcDir}/js/**/*.js`,
             'gulpfile.babel.js/**/*.js'
         ],
-        fontsIconSrcFiles: `${srcBase}/fonts/iconfont/*.svg`,
-        fontsSrcFiles: `${srcBase}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
-        fontsOutputDir: `${distBase}/fonts`,
-        revManifest: `${distBase}/rev-manifest.json`,
+        fontsIconSrcFiles: `${srcDir}/fonts/iconfont/*.svg`,
+        fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
+        fontsOutputDir: `${outputDir}/fonts`,
+        revManifest: `${outputDir}/rev-manifest.json`,
+        scriptsLibsFilename,
+        scriptsAppFilename,
         scriptsSrcFiles: [
-            `${srcBase}/js/**/*.js`,
-            `!${srcBase}/js/**/*.spec.js`
+            `${srcDir}/js/**/*.js`,
+            `!${srcDir}/js/**/*.spec.js`
         ],
         scriptsOutputFiles: [
-            `${distBase}/js/bower/**/*.js`,
-            `${distBase}/js/app.js`,
-            `${distBase}/js/**/*.js`
+            `${outputDir}/js/${scriptsLibsFilename}`,
+            `${outputDir}/js/${scriptsAppFilename}`,
+            `${outputDir}/js/**/*.js`
         ],
-        outputFiles: [`${distBase}/**/*.{html,css,js}`],
-        scriptsOutputDir: `${distBase}/js`,
-        scriptsLibsOutputDir: `${distBase}/js/bower`,
-        stylesMainSrcFiles: [`${srcBase}/sass/*.scss`],
-        stylesAllSrcFiles: [`${srcBase}/sass/**/*.scss`],
-        stylesSrcGeneratedDir: `${srcBase}/sass/generated`,
-        stylesOutputFiles: [`${distBase}/css/*.css`],
-        stylesOutputDir: `${distBase}/css`
+        outputFiles: [`${outputDir}/**/*.{html,css,js}`],
+        scriptsOutputDir: `${outputDir}/js`,
+        stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],
+        stylesAllSrcFiles: [`${srcDir}/sass/**/*.scss`],
+        stylesSrcGeneratedDir: `${srcDir}/sass/generated`,
+        stylesOutputFiles: [`${outputDir}/css/*.css`],
+        stylesOutputDir: `${outputDir}/css`
     };
 }();

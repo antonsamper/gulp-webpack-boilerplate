@@ -32,19 +32,17 @@ export default () => {
     let libs = gulp
         .src(bowerFiles('**/*.js'))
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('scripts-libs')))
         .pipe(gulpif(process.env.GULP_UGLIFY === 'true', uglify()))
-        .pipe(gulpif(process.env.GULP_CONCAT === 'true', concat('libs.min.js')))
+        .pipe(concat(sharedPaths.scriptsLibsFilename))
         .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
-        .pipe(gulp.dest(sharedPaths.scriptsLibsOutputDir));
+        .pipe(gulp.dest(sharedPaths.scriptsOutputDir));
 
     let app = gulp
         .src(sharedPaths.scriptsSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('scripts-app')))
         .pipe(babel())
         .pipe(gulpif(process.env.GULP_UGLIFY === 'true', uglify()))
-        .pipe(gulpif(process.env.GULP_CONCAT === 'true', concat('app.min.js')))
+        .pipe(concat(sharedPaths.scriptsAppFilename))
         .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.scriptsOutputDir));
 

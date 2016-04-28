@@ -26,7 +26,6 @@ export default () => {
         vars: {
             GULP_IGNORE_ERRORS: true,
             GULP_CACHE: true,
-            GULP_CONCAT: false,
             GULP_COVERAGE: false,
             GULP_CSSO: false,
             GULP_HTMLMIN: false,
