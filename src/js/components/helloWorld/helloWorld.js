@@ -9,16 +9,10 @@
  *********************************************************************************/
 
 (function (app) {
-
-  app.helloWorld = function (planet) {
-    var hello = 'Hello ';
-    var thing = 'World!';
-
-    if(planet === true) {
-      thing = 'Planet!';
-    }
-
-    return hello + thing;
-  };
-
+    app.helloWorld = function (planet) {
+        const hello = 'Hello ';
+        let thing = 'World!';
+        if (planet === true) thing = 'Planet!';
+        return hello + thing;
+    };
 })(APP);
