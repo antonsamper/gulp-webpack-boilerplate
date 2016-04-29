@@ -3,8 +3,11 @@
   "author": "Anton Samper Rivaya",
   "version": "1.4.9",
   "license": "MIT",
-  "repository": "https://github.com/antonsamper/gulp-boilerplate.git",
-  "description": "gulp.js Boilerplate",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:antonsamper/gulp-boilerplate.git"
+    },
+    "description": "gulp.js Boilerplate",
   "scripts": {
     "dev": "gulp",
     "start": "gulp",
