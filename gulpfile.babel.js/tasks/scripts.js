@@ -17,6 +17,7 @@ import cache        from 'gulp-cached';
 import concat       from 'gulp-concat';
 import gulpif       from 'gulp-if';
 import plumber      from 'gulp-plumber';
+import remember     from 'gulp-remember';
 import rev          from 'gulp-rev';
 import uglify       from 'gulp-uglify';
 import bowerFiles   from 'main-bower-files';
@@ -32,7 +33,9 @@ export default () => {
     let libs = gulp
         .src(bowerFiles('**/*.js'))
         .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('scripts-libs')))
         .pipe(gulpif(process.env.GULP_UGLIFY === 'true', uglify()))
+        .pipe(remember('scripts-libs'))
         .pipe(concat(sharedPaths.scriptsLibsFilename))
         .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.scriptsOutputDir));
@@ -40,8 +43,10 @@ export default () => {
     let app = gulp
         .src(sharedPaths.scriptsSrcFiles)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
+        .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('scripts-app')))
         .pipe(babel())
         .pipe(gulpif(process.env.GULP_UGLIFY === 'true', uglify()))
+        .pipe(remember('scripts-app'))
         .pipe(concat(sharedPaths.scriptsAppFilename))
         .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.scriptsOutputDir));
