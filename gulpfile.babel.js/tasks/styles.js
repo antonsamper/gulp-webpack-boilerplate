@@ -13,7 +13,6 @@ import sharedPaths  from '../shared/paths.js';
 import sharedEvents from '../shared/events.js';
 import autoprefixer from 'autoprefixer';
 import gulp         from 'gulp';
-import cache        from 'gulp-cached';
 import csso         from 'gulp-csso';
 import gulpif       from 'gulp-if';
 import postcss      from 'gulp-postcss';
