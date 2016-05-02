@@ -5,18 +5,24 @@
 
 
 /*********************************************************************************
- 1. TESTS
+ 1. DEPENDENCIES
  *********************************************************************************/
 
+import helloWorld from './helloWorld';
 
-describe('The helloWorld component...', function() {
 
-  it('should return a `Hello World!` string by default', function() {
-    expect(APP.helloWorld()).toEqual('Hello World!');
+/*********************************************************************************
+ 2. TESTS
+ *********************************************************************************/
+
+describe('The helloWorld component...', () => {
+
+  it('should return a `Hello World!` string by default', () => {
+    expect(helloWorld()).toEqual('Hello World!');
   });
 
-  it('should return a `Hello Planet!` string when `true` (bool) is passed in', function() {
-    expect(APP.helloWorld(true)).toEqual('Hello Planet!');
+  it('should return a `Hello Planet!` string when `true` (bool) is passed in', () => {
+    expect(helloWorld(true)).toEqual('Hello Planet!');
   });
 
 });

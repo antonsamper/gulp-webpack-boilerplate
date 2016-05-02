@@ -1,11 +1,25 @@
 /*
- * @title APP
- * @description Simple module definition for the app
+ * @title App
+ * @description Application entry point
  */
 
 
 /*********************************************************************************
- 1. MODULE DEFINITION
+ 1. DEPENDENCIES
  *********************************************************************************/
 
-var APP = {};
+import $ from 'jquery';
+import fibonacci from './components/fibonacci/fibonacci';
+import helloWorld from './components/helloWorld/helloWorld';
+
+// helloWorld example
+helloWorld();
+
+// fibonacci example
+for (let n of fibonacci) {
+    if (n > 10) break;
+    console.log(`fibonacci sequence number: ${n}`);
+}
+
+// jquery selector sample
+console.log($('body'));
