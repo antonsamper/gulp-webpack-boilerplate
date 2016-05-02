@@ -3,7 +3,7 @@
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
 </p>
-# gulp.js starter for single page apps
+# gulp.js + webpack starter boilerplate for single page apps
 A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)

@@ -7,7 +7,7 @@
         "type": "git",
         "url": "git@github.com:antonsamper/gulp-boilerplate.git"
     },
-    "description": "gulp.js Boilerplate",
+    "description": "gulp.js + webpack Boilerplate",
     "scripts": {
         "dev": "gulp",
         "start": "gulp",
