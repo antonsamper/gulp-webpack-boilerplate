@@ -65,6 +65,7 @@ Task Name         | Description
 `gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS
+`gulp webpack`    | Bundle js files
 
 
 ## File Structure

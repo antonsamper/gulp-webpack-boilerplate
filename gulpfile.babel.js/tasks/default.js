@@ -30,7 +30,8 @@ export default () => {
             GULP_HTMLMIN: false,
             GULP_REV: false,
             GULP_SOURCEMAPS: true,
-            GULP_UGLIFY: false
+            GULP_UGLIFY: false,
+            GULP_WEBPACK_DEV: true
         }
     });
 
@@ -38,11 +39,13 @@ export default () => {
         'clean',
         'iconfont',
         'styles',
+        'webpack',
         ['minifyHtml', 'imagemin'],
         'move',
         'server'
     );
 
+    gulp.watch(sharedPaths.scriptsSrcFiles, ['webpack']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
     gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
     gulp.watch(sharedPaths.fontsIconSrcFiles, ['iconfont']);

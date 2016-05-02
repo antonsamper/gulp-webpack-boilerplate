@@ -15,18 +15,16 @@ module.exports = function () {
 
     return {
         srcDir,
+        outputDir,
         srcIndex: `${srcDir}/index.html`,
         imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${outputDir}/images`,
-        outputDir,
         fontsIconSrcFiles: `${srcDir}/fonts/iconfont/*.svg`,
         fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
-        scriptsOutputFiles: [
-            `${outputDir}/js/**/*.js`
-        ],
+        scriptsOutputFiles: `${outputDir}/js/**/*.js`,
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],
         scriptsOutputDir: `${outputDir}/js`,
         stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],

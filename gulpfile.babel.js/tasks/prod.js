@@ -28,7 +28,8 @@ export default () => {
             GULP_HTMLMIN: true,
             GULP_REV: true,
             GULP_SOURCEMAPS: false,
-            GULP_UGLIFY: true
+            GULP_UGLIFY: true,
+            GULP_WEBPACK_DEV: false
         }
     });
 
@@ -36,6 +37,7 @@ export default () => {
         'clean',
         'iconfont',
         'styles',
+        'webpack',
         ['minifyHtml', 'imagemin'],
         'revReplace',
         'move',
