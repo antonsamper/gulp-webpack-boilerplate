@@ -36,7 +36,6 @@ export default () => {
         'clean',
         'iconfont',
         'styles',
-        'scripts',
         ['minifyHtml', 'imagemin'],
         'revReplace',
         'move',

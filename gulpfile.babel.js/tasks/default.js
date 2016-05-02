@@ -10,7 +10,6 @@
  *********************************************************************************/
 
 import sharedPaths from '../shared/paths.js';
-import browserSync from 'browser-sync';
 import gulp        from 'gulp';
 import env         from 'gulp-env';
 import runSequence from 'run-sequence';
@@ -39,13 +38,11 @@ export default () => {
         'clean',
         'iconfont',
         'styles',
-        'scripts',
         ['minifyHtml', 'imagemin'],
         'move',
         'server'
     );
 
-    gulp.watch(sharedPaths.scriptsSrcFiles, ['scripts']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
     gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
     gulp.watch(sharedPaths.fontsIconSrcFiles, ['iconfont']);

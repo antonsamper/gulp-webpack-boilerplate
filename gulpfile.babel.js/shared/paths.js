@@ -13,9 +13,6 @@ module.exports = function () {
     const srcDir =  'src';
     const outputDir = 'dist';
 
-    const scriptsLibsFilename = 'libs.min.js';
-    const scriptsAppFilename = 'app.min.js';
-
     return {
         srcDir,
         srcIndex: `${srcDir}/index.html`,
@@ -26,15 +23,8 @@ module.exports = function () {
         fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,
-        scriptsLibsFilename,
-        scriptsAppFilename,
-        scriptsSrcFiles: [
-            `${srcDir}/js/**/*.js`,
-            `!${srcDir}/js/**/*.spec.js`
-        ],
+        scriptsSrcFiles: `${srcDir}/js/**/*.js`,
         scriptsOutputFiles: [
-            `${outputDir}/js/${scriptsLibsFilename}`,
-            `${outputDir}/js/${scriptsAppFilename}`,
             `${outputDir}/js/**/*.js`
         ],
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],

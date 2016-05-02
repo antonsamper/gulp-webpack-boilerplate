@@ -63,7 +63,6 @@ Task Name         | Description
 `gulp minifyHtml` | Inject assets into and compress the main index.html
 `gulp move`       | Move source files to output directory
 `gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
-`gulp scripts`    | Concatenate and compress js files
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS
 
@@ -122,7 +121,6 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 		|- helloWorld/
 			|- helloWorld.js
 			|- helloWorld.spec.js
-			|- helloWorld.e2e.js
 			|- helloWorld.html
 			|- helloWorld.css
 ```
