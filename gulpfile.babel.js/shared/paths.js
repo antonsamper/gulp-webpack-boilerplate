@@ -22,13 +22,6 @@ module.exports = function () {
         imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${outputDir}/images`,
         outputDir,
-        eslintSrcFiles: [
-            '.eslintrc',
-            'bower.json',
-            'package.json',
-            `${srcDir}/js/**/*.js`,
-            'gulpfile.babel.js/**/*.js'
-        ],
         fontsIconSrcFiles: `${srcDir}/fonts/iconfont/*.svg`,
         fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
         fontsOutputDir: `${outputDir}/fonts`,
@@ -52,4 +45,5 @@ module.exports = function () {
         stylesOutputFiles: [`${outputDir}/css/*.css`],
         stylesOutputDir: `${outputDir}/css`
     };
+
 }();

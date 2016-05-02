@@ -39,14 +39,12 @@ export default () => {
         'clean',
         'iconfont',
         'styles',
-        'eslint',
         'scripts',
         ['minifyHtml', 'imagemin'],
         'move',
         'server'
     );
 
-    gulp.watch(sharedPaths.eslintSrcFiles, ['eslint']);
     gulp.watch(sharedPaths.scriptsSrcFiles, ['scripts']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
     gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);

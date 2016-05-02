@@ -57,7 +57,6 @@ Task Name         | Description
 Task Name         | Description
 ----------------- | ----------------------------------------------------
 `gulp clean`      | Delete the output directory
-`gulp eslint`     | Detect js syntax and style errors
 `gulp iconfont`   | Compile icon font and the corresponding Sass
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
