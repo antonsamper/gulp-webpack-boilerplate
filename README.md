@@ -2,6 +2,9 @@
   <a href="http://gulpjs.com">
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
+  <a href="https://webpack.github.io">
+      <img src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" alt="webpack" style="width: 200px; margin-left: 20px;">
+    </a>
 </p>
 # gulp.js + webpack starter boilerplate for single page apps
 A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
