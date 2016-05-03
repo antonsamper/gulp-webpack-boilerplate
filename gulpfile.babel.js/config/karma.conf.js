@@ -18,10 +18,9 @@ var path = require('path');
 
 module.exports = config => {
 
-    var basePath = `${__dirname}/../..`;
-    var reporters = ['spec'];
-    var testFiles = `${sharedPaths.srcDir}/js/**/*.spec.js`;
-
+    let reporters = ['spec'];
+    const basePath = `${__dirname}/../..`;
+    const testFiles = `${sharedPaths.srcDir}/js/**/*.spec.js`;
 
     // Optional add coverage
     if (process.env.GULP_COVERAGE) reporters.push('coverage');
