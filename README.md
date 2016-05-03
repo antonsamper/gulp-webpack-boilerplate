@@ -1,9 +1,9 @@
 <p align="center">
   <a style="display: inline-block;" href="http://gulpjs.com">
-    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" />
   </a>
   <a style="display: inline-block;" href="https://webpack.github.io">
-      <img src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" alt="webpack" wid style="width: 200px; margin-left: 20px;">
+      <img width="200" src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" />
     </a>
 </p>
 # gulp.js + webpack starter boilerplate for single page apps
