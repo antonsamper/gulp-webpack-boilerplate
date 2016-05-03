@@ -3,7 +3,7 @@
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" />
   </a>
   <a style="display: inline-block;" href="https://webpack.github.io">
-      <img width="200" src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" />
+      <img width="200" src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-vertical-quadratic.png" />
     </a>
 </p>
 # gulp.js + webpack starter boilerplate for single page apps
