@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a style="display: inline-block;" href="http://gulpjs.com">
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
-  <a href="https://webpack.github.io">
-      <img src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" alt="webpack" style="width: 200px; margin-left: 20px;">
+  <a style="display: inline-block;" href="https://webpack.github.io">
+      <img src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-cube.png" alt="webpack" wid style="width: 200px; margin-left: 20px;">
     </a>
 </p>
 # gulp.js + webpack starter boilerplate for single page apps
@@ -41,7 +41,7 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm start`       | Generate a development environment with watch and browsersync
+`npm start`       | Generate a development environment with watch and BrowserSync
 `npm run dev`     | Same as `npm start`
 `npm run prod`    | Outputs minified production code, asset revisions and run unit tests
 `npm test`        | Run unit tests
