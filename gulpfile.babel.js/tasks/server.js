@@ -29,7 +29,13 @@ export default () => {
         reloadDebounce: 500,
         open: true,
         notify: false,
-        scrollProportionally: true
+        scrollProportionally: true,
+        ui: {
+            port: 9000,
+            weinre: {
+                port: 9090
+            }
+        }
     });
 
 };
