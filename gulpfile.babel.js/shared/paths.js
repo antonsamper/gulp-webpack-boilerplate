@@ -10,8 +10,9 @@
 
 module.exports = function () {
 
-    const srcDir =  'src';
+    const srcDir = 'src';
     const outputDir = 'dist';
+    const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
 
     const scriptsLibsFilename = 'libs.min.js';
     const scriptsAppFilename = 'app.min.js';
@@ -29,8 +30,8 @@ module.exports = function () {
             `${srcDir}/js/**/*.js`,
             'gulpfile.babel.js/**/*.js'
         ],
-        fontsIconSrcFiles: `${srcDir}/fonts/iconfont/*.svg`,
-        fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
+        fontsIconSrcFiles: iconsDir,
+        fontsSrcFiles: [`${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`, `!${iconsDir}`],
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,
         scriptsLibsFilename,
