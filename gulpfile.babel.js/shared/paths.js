@@ -10,8 +10,9 @@
 
 module.exports = function () {
 
-    const srcDir =  'src';
+    const srcDir = 'src';
     const outputDir = 'dist';
+    const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
 
     return {
         srcDir,
@@ -19,8 +20,8 @@ module.exports = function () {
         srcIndex: `${srcDir}/index.html`,
         imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${outputDir}/images`,
-        fontsIconSrcFiles: `${srcDir}/fonts/iconfont/*.svg`,
-        fontsSrcFiles: `${srcDir}/fonts/!(iconfont)**/*.{eot,svg,ttf,woff,woff2}`,
+        fontsIconSrcFiles: iconsDir,
+        fontsSrcFiles: [`${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`, `!${iconsDir}`],
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
