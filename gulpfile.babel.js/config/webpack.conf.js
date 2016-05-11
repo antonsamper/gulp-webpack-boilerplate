@@ -48,6 +48,7 @@ export default (() => {
     if (process.env.GULP_WEBPACK_DEV === 'true') {
         config.debug = true;
         config.devtool = 'inline-source-map';
+        config.output.filename = '[name].min.js';
     }
 
     if (process.env.GULP_UGLIFY === 'true') {
