@@ -1,5 +1,5 @@
 <p align="center">
-    <img height="263" width="141" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-gulp-webpack.png" />
+    <img width="141" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-gulp-webpack.png" />
 </p>
 #gulp.js + webpack boilerplate for single page apps
 A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
