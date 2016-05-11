@@ -1,10 +1,13 @@
 <p align="center">
-  <a href="http://gulpjs.com">
-    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  <a style="display: inline-block;" href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" />
   </a>
+  <a style="display: inline-block;" href="https://webpack.github.io">
+      <img width="200" src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-vertical-quadratic.png" />
+    </a>
 </p>
-# gulp.js starter for single page apps
-A clean and simple starter ES6 boilerplate for single page applications using gulp.js.
+# gulp.js + webpack starter boilerplate for single page apps
+A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
 [![Travis](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
@@ -38,7 +41,7 @@ To start using the boilerplate, first install all the dependencies and then run 
 
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
-`npm start`       | Generate a development environment with watch and browsersync
+`npm start`       | Generate a development environment with watch and BrowserSync
 `npm run dev`     | Same as `npm start`
 `npm run prod`    | Outputs minified production code, asset revisions and run unit tests
 `npm test`        | Run unit tests
@@ -57,16 +60,15 @@ Task Name         | Description
 Task Name         | Description
 ----------------- | ----------------------------------------------------
 `gulp clean`      | Delete the output directory
-`gulp eslint`     | Detect js syntax and style errors
 `gulp iconfont`   | Compile icon font and the corresponding Sass
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
 `gulp minifyHtml` | Inject assets into and compress the main index.html
 `gulp move`       | Move source files to output directory
 `gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
-`gulp scripts`    | Concatenate and compress js files
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS
+`gulp webpack`    | Bundle js files
 
 
 ## File Structure
@@ -123,7 +125,6 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 		|- helloWorld/
 			|- helloWorld.js
 			|- helloWorld.spec.js
-			|- helloWorld.e2e.js
 			|- helloWorld.html
 			|- helloWorld.css
 ```

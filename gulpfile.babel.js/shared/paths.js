@@ -14,37 +14,18 @@ module.exports = function () {
     const outputDir = 'dist';
     const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
 
-    const scriptsLibsFilename = 'libs.min.js';
-    const scriptsAppFilename = 'app.min.js';
-
     return {
         srcDir,
+        outputDir,
         srcIndex: `${srcDir}/index.html`,
         imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${outputDir}/images`,
-        outputDir,
-        eslintSrcFiles: [
-            '.eslintrc',
-            'bower.json',
-            'package.json',
-            `${srcDir}/js/**/*.js`,
-            'gulpfile.babel.js/**/*.js'
-        ],
         fontsIconSrcFiles: iconsDir,
         fontsSrcFiles: [`${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`, `!${iconsDir}`],
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,
-        scriptsLibsFilename,
-        scriptsAppFilename,
-        scriptsSrcFiles: [
-            `${srcDir}/js/**/*.js`,
-            `!${srcDir}/js/**/*.spec.js`
-        ],
-        scriptsOutputFiles: [
-            `${outputDir}/js/${scriptsLibsFilename}`,
-            `${outputDir}/js/${scriptsAppFilename}`,
-            `${outputDir}/js/**/*.js`
-        ],
+        scriptsSrcFiles: `${srcDir}/js/**/*.js`,
+        scriptsOutputFiles: `${outputDir}/js/**/*.js`,
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],
         scriptsOutputDir: `${outputDir}/js`,
         stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],
@@ -53,4 +34,5 @@ module.exports = function () {
         stylesOutputFiles: [`${outputDir}/css/*.css`],
         stylesOutputDir: `${outputDir}/css`
     };
+
 }();

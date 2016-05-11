@@ -8,8 +8,8 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var bowerFiles = require('main-bower-files');
 var sharedPaths = require('../shared/paths.js');
+var path = require('path');
 
 
 /*********************************************************************************
@@ -18,8 +18,9 @@ var sharedPaths = require('../shared/paths.js');
 
 module.exports = config => {
 
-    var basePath = `${__dirname}/../..`;
-    var reporters = ['spec'];
+    let reporters = ['spec'];
+    const basePath = `${__dirname}/../..`;
+    const testFiles = `${sharedPaths.srcDir}/js/**/*.spec.js`;
 
     // Optional add coverage
     if (process.env.GULP_COVERAGE) reporters.push('coverage');
@@ -28,19 +29,38 @@ module.exports = config => {
         singleRun: true,
         basePath: basePath,
         frameworks: ['jasmine'],
-        files: bowerFiles({
-            paths: {
-                bowerDirectory: `${basePath}/bower_components`,
-                bowerJson: `${basePath}/bower.json`
-            }
-        }).concat([
-            'node_modules/babel-polyfill/dist/polyfill.js',
-            `${sharedPaths.srcDir}/js/**/*.js`
-        ]),
+        files: [testFiles],
         browsers: ['Chrome'],
         preprocessors: {
-            'src/js/**/*.js': ['babel'],
-            'src/js/**/!(*spec).js': ['coverage']
+            [testFiles]: ['webpack']
+        },
+        webpack: {
+            module: {
+                preLoaders: [{
+                    test: /\.js$/,
+                    include: path.resolve(`${sharedPaths.srcDir}/js/`),
+                    exclude: /\.spec\.js$/,
+                    loader: 'isparta'
+                }, {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'eslint'
+                }],
+                loaders: [{
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    loader: ['babel'],
+                    query: {
+                        presets: ['es2015']
+                    }
+                }]
+            }
+        },
+        webpackMiddleware: {
+            stats: {
+                colors: true
+            },
+            noInfo: true
         },
         reporters: reporters,
         coverageReporter: {
@@ -53,11 +73,6 @@ module.exports = config => {
             }, {
                 type: 'text-summary'
             }]
-        },
-        babelPreprocessor: {
-            options: {
-                sourceMap: 'inline'
-            }
         }
     });
 };
