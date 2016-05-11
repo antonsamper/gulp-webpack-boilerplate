@@ -1,12 +1,7 @@
 <p align="center">
-  <a style="display: inline-block;" href="http://gulpjs.com">
-    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" />
-  </a>
-  <a style="display: inline-block;" href="https://webpack.github.io">
-      <img width="200" src="https://raw.githubusercontent.com/webpack/webpack.github.com/master/assets/logo-vertical-quadratic.png" />
-    </a>
+    <img height="263" width="141" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-gulp-webpack.svg" />
 </p>
-# gulp.js + webpack starter boilerplate for single page apps
+<h1 align="center">gulp.js + webpack boilerplate for single page apps</h1>
 A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
