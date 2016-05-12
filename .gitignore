@@ -1,3 +1,6 @@
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+dist
+
 # Bower components
 bower_components
 
@@ -5,3 +8,12 @@ bower_components
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
+
+# Auto generated styles
+src/sass/generated
+
+# Webstorm project files
+.idea
+
+# OSX files
+.DS_Store
