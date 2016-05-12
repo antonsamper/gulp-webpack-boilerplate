@@ -1,11 +1,11 @@
 {
-  "name": "gulp-boilerplate",
+  "name": "gulp-webpack-boilerplate",
   "author": "Anton Samper Rivaya",
   "version": "2.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:antonsamper/gulp-boilerplate.git"
+    "url": "git@github.com:antonsamper/gulp-webpack-boilerplate.git"
   },
   "description": "gulp.js + webpack Boilerplate",
   "scripts": {
