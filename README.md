@@ -72,6 +72,7 @@ The default working directory for development is `src/`. This directory contains
 ```
 bower_components/
 dist/
+|- x.x.x/
 src/
 |- fonts/
 	|- examplefont.eot
@@ -97,7 +98,7 @@ src/
 ```
 
 ### Fonts
-The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/fonts/` folder automatically.
+The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/x.x.x/fonts/` folder automatically.
 
 In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/components/_iconfont.scss` with the `@font-face` declaration and the font classes, for example:
 
@@ -129,6 +130,18 @@ The boilerplate supports bower components. The components are installed in the `
 
 ### SASS
 This workflow uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
+
+### Versioning
+The production task outputs versioned folders based on the version in your `package.json` file. For example, if your `package.json` version is `1.2.3` and you then run `npm run prod`, the following will be produced:
+```
+dist/
+|- 1.2.3/
+	|- index.html
+    |- css/
+    |- fonts/
+    |- images/
+    |- js/
+```
 
 ### Releases
 The three main functions of `release-it` have been mapped as custom npm scripts. When creating a release all you have to do is run any of the following:

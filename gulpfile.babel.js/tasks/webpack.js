@@ -23,7 +23,8 @@ import webpack       from 'webpack-stream';
  *********************************************************************************/
 
 export default () => {
-    return gulp.src(`${sharedPaths.srcDir}/js/app.js`)
+    return gulp
+        .src(`${sharedPaths.srcDir}/js/app.js`)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(named())
         .pipe(webpack(webpackConfig))

@@ -5,13 +5,20 @@
 
 
 /*********************************************************************************
- 1. EXPORTS
+ 1. DEPENDENCIES
+ *********************************************************************************/
+
+import packagejson from '../../package.json';
+
+
+/*********************************************************************************
+ 2. EXPORTS
  *********************************************************************************/
 
 module.exports = function () {
 
     const srcDir = 'src';
-    const outputDir = 'dist';
+    const outputDir = `dist/${packagejson.version}`;
     const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
 
     return {
