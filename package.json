@@ -12,7 +12,7 @@
     "dev": "gulp",
     "start": "gulp",
     "prod": "gulp prod",
-    "test": "gulp karma",
+    "test": "GULP_COVERAGE=true gulp karma",
     "postinstall": "bower i",
     "release-patch": "release-it --non-interactive patch",
     "release-minor": "release-it --non-interactive minor",
