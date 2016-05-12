@@ -26,7 +26,6 @@ export default () => {
             baseDir: sharedPaths.outputDir
         },
         port: 8080,
-        reloadDebounce: 500,
         open: true,
         notify: false,
         scrollProportionally: true,
