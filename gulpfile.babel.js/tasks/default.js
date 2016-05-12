@@ -11,7 +11,6 @@
 
 import sharedPaths from '../shared/paths.js';
 import gulp        from 'gulp';
-import env         from 'gulp-env';
 import runSequence from 'run-sequence';
 
 
@@ -21,19 +20,10 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    env({
-        vars: {
-            GULP_IGNORE_ERRORS: true,
-            GULP_CACHE: true,
-            GULP_COVERAGE: false,
-            GULP_CSSO: false,
-            GULP_HTMLMIN: false,
-            GULP_REV: false,
-            GULP_SOURCEMAPS: true,
-            GULP_UGLIFY: false,
-            GULP_WEBPACK_DEV: true
-        }
-    });
+    process.env.GULP_IGNORE_ERRORS = true;
+    process.env.GULP_CACHE = true;
+    process.env.GULP_SOURCEMAPS = true;
+    process.env.GULP_WEBPACK_DEV = true;
 
     runSequence(
         'clean',
