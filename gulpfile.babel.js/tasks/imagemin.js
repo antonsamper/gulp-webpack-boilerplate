@@ -16,7 +16,6 @@ import cache        from 'gulp-cached';
 import gulpif       from 'gulp-if';
 import imagemin     from 'gulp-imagemin';
 import plumber      from 'gulp-plumber';
-import rev          from 'gulp-rev';
 
 
 /*********************************************************************************
@@ -29,8 +28,5 @@ export default () => {
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(gulpif(process.env.GULP_CACHE === 'true', cache('imagemin')))
         .pipe(imagemin())
-        .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.imagesOutputFiles))
-        .pipe(gulpif(process.env.GULP_REV === 'true', rev.manifest()))
-        .pipe(gulpif(process.env.GULP_REV === 'true', gulp.dest(sharedPaths.outputDir)));
 };

@@ -38,7 +38,7 @@ Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
 `npm start`       | Generate a development environment with watch and BrowserSync
 `npm run dev`     | Same as `npm start`
-`npm run prod`    | Outputs minified production code, asset revisions and run unit tests
+`npm run prod`    | Compile production code and run unit tests
 `npm test`        | Run unit tests
 
 ## Gulp Tasks
@@ -48,7 +48,7 @@ Task Name         | Description
 Task Name         | Description
 ----------------- | ---------------------------------------------------------------------
 `gulp`            | Generate a development environment with watch and browsersync
-`gulp prod`       | Outputs minified production code, asset revisions and run unit tests
+`gulp prod`       | Compile production code and run unit tests
 
 ###### Individual Tasks
 
@@ -60,7 +60,6 @@ Task Name         | Description
 `gulp karma`      | Run unit tests
 `gulp minifyHtml` | Inject assets into and compress the main index.html
 `gulp move`       | Move source files to output directory
-`gulp revReplace` | Rewrite occurrences of file names changed by gulp-rev
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS
 `gulp webpack`    | Bundle js files

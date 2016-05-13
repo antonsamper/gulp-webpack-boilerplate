@@ -21,7 +21,7 @@ export default (() => {
     let config = {
         cache: true,
         output: {
-            filename: '[name]-[hash].min.js'
+            filename: '[name].min.js'
         },
         module: {
             preLoaders: [{
@@ -48,7 +48,6 @@ export default (() => {
     if (process.env.GULP_WEBPACK_DEV === 'true') {
         config.debug = true;
         config.devtool = 'inline-source-map';
-        config.output.filename = '[name].min.js';
     }
 
     if (process.env.GULP_UGLIFY === 'true') {

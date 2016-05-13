@@ -17,7 +17,6 @@ import csso         from 'gulp-csso';
 import gulpif       from 'gulp-if';
 import postcss      from 'gulp-postcss';
 import plumber      from 'gulp-plumber';
-import rev          from 'gulp-rev';
 import sass         from 'gulp-sass';
 import sourcemaps   from 'gulp-sourcemaps';
 
@@ -46,6 +45,5 @@ export default () => {
         .pipe(postcss([autoprefixer(autoprefixerConfig)]))
         .pipe(gulpif(process.env.GULP_SOURCEMAPS === 'true', sourcemaps.write()))
         .pipe(gulpif(process.env.GULP_CSSO === 'true', csso()))
-        .pipe(gulpif(process.env.GULP_REV === 'true', rev()))
         .pipe(gulp.dest(sharedPaths.stylesOutputDir));
 };

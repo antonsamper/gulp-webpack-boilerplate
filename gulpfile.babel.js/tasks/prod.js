@@ -21,7 +21,6 @@ export default () => {
     process.env.GULP_COVERAGE = true;
     process.env.GULP_CSSO = true;
     process.env.GULP_HTMLMIN = true;
-    process.env.GULP_REV = true;
     process.env.GULP_UGLIFY = true;
 
     runSequence(
@@ -30,7 +29,6 @@ export default () => {
         'styles',
         'webpack',
         ['minifyHtml', 'imagemin'],
-        'revReplace',
         'move',
         'karma'
     );
