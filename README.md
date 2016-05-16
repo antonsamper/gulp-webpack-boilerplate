@@ -4,21 +4,21 @@
 #gulp.js + webpack boilerplate for single page apps
 A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
 
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-boilerplate/blob/master/LICENSE)
-[![Travis](https://img.shields.io/travis/antonsamper/gulp-boilerplate.svg)](https://travis-ci.org/antonsamper/gulp-boilerplate)
-[![devDependency Status](https://david-dm.org/antonsamper/gulp-boilerplate/dev-status.svg)](https://david-dm.org/antonsamper/gulp-boilerplate#info=devDependencies)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-webpack-boilerplate/blob/master/LICENSE)
+[![Travis](https://img.shields.io/travis/antonsamper/gulp-webpack-boilerplate.svg)](https://travis-ci.org/antonsamper/gulp-webpack-boilerplate)
+[![devDependency Status](https://david-dm.org/antonsamper/gulp-webpack-boilerplate/dev-status.svg)](https://david-dm.org/antonsamper/gulp-webpack-boilerplate#info=devDependencies)
 
 ###### Boilerplate variations
-- [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-boilerplate-with-angular)
+- [Boilerplate with AngularJS](https://github.com/antonsamper/gulp-webpack-boilerplate-with-angular)
 
 
 ## Boilerplate used by
 <p>
   <a href="http://signagerocket.com/">
-    <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-signagerocket.png">
+    <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-webpack-boilerplate/master/src/images/logo-signagerocket.png">
   </a>
   <a href="http://www.nowtv.com/">
-    <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-boilerplate/master/src/images/logo-nowtv.png">
+    <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-webpack-boilerplate/master/src/images/logo-nowtv.png">
   </a>
 </p>
 
