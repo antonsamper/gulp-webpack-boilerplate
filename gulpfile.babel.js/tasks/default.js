@@ -36,7 +36,8 @@ export default () => {
 
     gulp.watch(sharedPaths.scriptsSrcFiles, ['webpack']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
-    gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
+    gulp.watch([sharedPaths.srcIndex, sharedPaths.iconsSrcFiles], ['minifyHtml']);
+    gulp.watch(sharedPaths.fontsSrcFiles, ['move']);
     gulp.watch(sharedPaths.stylesAllSrcFiles, ['styles']);
 
 };

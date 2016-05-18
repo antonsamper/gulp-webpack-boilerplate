@@ -55,6 +55,7 @@ Task Name         | Description
 Task Name         | Description
 ----------------- | ----------------------------------------------------
 `gulp clean`      | Delete the output directory
+`gulp svg`        | Combine svgs into a <symbol> element with paths
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
 `gulp minifyHtml` | Inject assets into and compress the main index.html
@@ -77,7 +78,11 @@ src/
 	|- examplefont.svg
 	|- examplefont.ttf
 	|- examplefont.woff
-|- images/ 
+|- images/
+	|- icons/
+        |- icon01.svg
+        |- icon02.svg
+        |- icon03.svg
 |- js/
 	|- components/
 		|- helloWorld/
@@ -94,6 +99,13 @@ src/
 ### Fonts
 The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/x.x.x/fonts/` folder automatically.
 
+### Icons
+The `src/images/icons/` folder should contain all the svg icons that should be combined to then be injected into the page. 
+Have a look at the following links to understand the technique adopted by the boilerplate to make use of svg icons:
+https://css-tricks.com/icon-fonts-vs-svg/
+https://sarasoueidan.com/blog/icon-fonts-to-svg/
+https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/
+(The `<symbol>` element is generated as part of the `minifyHtml` task)
 
 ### Images
 All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
