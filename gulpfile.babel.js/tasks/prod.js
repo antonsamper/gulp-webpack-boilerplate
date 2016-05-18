@@ -25,7 +25,6 @@ export default () => {
 
     runSequence(
         'clean',
-        'iconfont',
         'styles',
         'webpack',
         ['minifyHtml', 'imagemin'],

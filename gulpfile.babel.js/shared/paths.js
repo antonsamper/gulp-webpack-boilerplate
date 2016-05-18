@@ -19,7 +19,6 @@ module.exports = function () {
 
     const srcDir = 'src';
     const outputDir = `dist/${packagejson.version}`;
-    const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
 
     return {
         srcDir,
@@ -27,7 +26,6 @@ module.exports = function () {
         srcIndex: `${srcDir}/index.html`,
         imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
         imagesOutputFiles: `${outputDir}/images`,
-        fontsIconSrcFiles: iconsDir,
         fontsSrcFiles: [`${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`, `!${iconsDir}`],
         fontsOutputDir: `${outputDir}/fonts`,
         revManifest: `${outputDir}/rev-manifest.json`,

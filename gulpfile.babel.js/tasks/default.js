@@ -27,7 +27,6 @@ export default () => {
 
     runSequence(
         'clean',
-        'iconfont',
         'styles',
         'webpack',
         ['minifyHtml', 'imagemin'],
@@ -38,7 +37,6 @@ export default () => {
     gulp.watch(sharedPaths.scriptsSrcFiles, ['webpack']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
     gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
-    gulp.watch(sharedPaths.fontsIconSrcFiles, ['iconfont']);
     gulp.watch(sharedPaths.stylesAllSrcFiles, ['styles']);
 
 };

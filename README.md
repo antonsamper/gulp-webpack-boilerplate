@@ -55,7 +55,6 @@ Task Name         | Description
 Task Name         | Description
 ----------------- | ----------------------------------------------------
 `gulp clean`      | Delete the output directory
-`gulp iconfont`   | Compile icon font and the corresponding Sass
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
 `gulp minifyHtml` | Inject assets into and compress the main index.html
@@ -78,10 +77,6 @@ src/
 	|- examplefont.svg
 	|- examplefont.ttf
 	|- examplefont.woff
-	|- iconfont/
-		|- iconfont01.svg
-		|- iconfont02.svg
-		|- iconfont03.svg
 |- images/ 
 |- js/
 	|- components/
@@ -99,14 +94,6 @@ src/
 ### Fonts
 The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/x.x.x/fonts/` folder automatically.
 
-In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/components/_iconfont.scss` with the `@font-face` declaration and the font classes, for example:
-
-```
-&--iconfont01:before { content: '\e001'; }
-&--iconfont02:before { content: '\e002'; }
-&--iconfont03:before { content: '\e003'; }
-```
-This auto generated file is explicitly included in the Sass manifest.
 
 ### Images
 All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
