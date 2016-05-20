@@ -19,18 +19,18 @@ module.exports = function () {
 
     const srcDir = 'src';
     const outputDir = `dist/${packagejson.version}`;
-    const iconsDir = `${srcDir}/fonts/iconfont/*.svg`;
+    const iconsFolderName = 'icons';
+    const iconsSrcFiles = `${srcDir}/images/${iconsFolderName}/*.svg`;
 
     return {
         srcDir,
         outputDir,
         srcIndex: `${srcDir}/index.html`,
-        imagesSrcFiles: `${srcDir}/images/**/*.{jpg,png,gif,svg}`,
+        imagesSrcFiles: [`${srcDir}/images/**/*.{jpg,png,gif,svg}`, `!${iconsSrcFiles}`],
         imagesOutputFiles: `${outputDir}/images`,
-        fontsIconSrcFiles: iconsDir,
-        fontsSrcFiles: [`${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`, `!${iconsDir}`],
-        fontsOutputDir: `${outputDir}/fonts`,
-        revManifest: `${outputDir}/rev-manifest.json`,
+        iconsSrcFiles,
+        iconsFolderName,
+        fontsSrcFiles: `${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
         scriptsOutputFiles: `${outputDir}/js/**/*.js`,
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],
@@ -38,7 +38,7 @@ module.exports = function () {
         stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],
         stylesAllSrcFiles: [`${srcDir}/sass/**/*.scss`],
         stylesSrcGeneratedDir: `${srcDir}/sass/generated`,
-        stylesOutputFiles: [`${outputDir}/css/*.css`],
+        stylesOutputFiles: `${outputDir}/css/*.css`,
         stylesOutputDir: `${outputDir}/css`
     };
 
