@@ -1,4 +1,4 @@
-# Compiled binary addons (http://nodejs.org/api/addons.html)
+# Compiled directory
 dist
 
 # Bower components

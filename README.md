@@ -62,7 +62,8 @@ Task Name         | Description
 
 
 ## File Structure
-The default working directory for development is `src/`. This directory contains all the styles, scripts, fonts and images used to create the front-end of the website.
+The default working directory for development is `src/`. This directory contains all the styles, scripts, fonts and 
+images used to create the front-end of the website.
 
 ```
 bower_components/
@@ -93,23 +94,30 @@ src/
 ```
 
 ### Fonts
-The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/x.x.x/fonts/` folder automatically.
+The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder 
+will be copied to the `dist/x.x.x/fonts/` folder automatically.
 
 ### Icons
-The `src/images/icons/` folder should contain all the svg icons that should be combined to then be injected into the page. 
-Have a look at the following links to understand the technique adopted by the boilerplate to make use of svg icons:
+The `src/images/icons/` folder should contain all the svg icons that should be combined to then be injected into 
+the page. Have a look at the following links to understand the technique adopted by the boilerplate to make use of 
+svg icons:
 
 * https://css-tricks.com/icon-fonts-vs-svg/
 * https://sarasoueidan.com/blog/icon-fonts-to-svg/
 * https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/
 
-(The `<symbol>` element is generated as part of the `minifyHtml` task)
+(The `<symbol>` element is generated and injected as part of the `minifyHtml` task)
 
 ### Images
-All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
+All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation 
+enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have 
+any of the following extensions: `.jpg` `.png` `.gif` `.svg`
 
 ### JS
-All the scripts should be placed inside the `src/js/` folder. These files will all be linted and then injected into `index.html`. The current setup assumes a modular approach when adding new features so that everything that is require for a module is inside of its own folder - this can include tests, templates and specific styles if needed. For example:
+All the scripts should be placed inside the `src/js/` folder. These files will all be linted. The current setup assumes 
+a component based approach for features/functionality so that everything is inside of its own folder - this can include 
+tests, templates and specific styles if needed. 
+For example:
 
 ```
 |- js/
@@ -122,13 +130,27 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 ```
 
 ### Bower
-The boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "jquery.js",`
+The boilerplate supports bower components and these will be installed in the default location `bower_components/`.
+If you install styles through bower, please add them to the manifest file e.g.:
+```
+// main.scss
+@import '../../bower_components/component-name/file';
+```
 
-### SASS
-This workflow uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
+If you install scripts, then these will be automatically picked up by webpack so all you have to do is import them 
+where ever you need them e.g.
+```
+// app.js
+import $ from 'jquery';
+```
+
+### Scss (SASS)
+This workflow uses, although it's not restricted to, the `scss` format for Sass. All `scss` files should be placed in 
+the `src/sass/` folder. The styles manifest is `main.scss`.
 
 ### Versioning
-The production task outputs versioned folders based on the version in your `package.json` file. For example, if your `package.json` version is `1.2.3` and you then run `npm run prod`, the following will be produced:
+The production task outputs versioned folders based on the version in your `package.json` file. For example, if your 
+`package.json` version is `1.2.3` and you then run `npm run prod`, the following will be produced:
 ```
 dist/
 |- 1.2.3/
@@ -140,7 +162,8 @@ dist/
 ```
 
 ### Releases
-The three main functions of `release-it` have been mapped as custom npm scripts. When creating a release all you have to do is run any of the following:
+The three main functions of `release-it` have been mapped as custom npm scripts. When creating a release all you have 
+to do is run any of the following:
  *  `npm run release-patch`
  *  `npm run release-minor`
  *  `npm run release-major`
