@@ -33,8 +33,8 @@ gulp.task('html', () => {
         ], {
             read: false
         }), {
-            ignorePath: sharedPaths.outputDir.replace('./', ''),
-            addRootSlash: false
+            ignorePath: sharedPaths.outputDir,
+            addRootSlash: true
         }))
         .pipe(inject(gulp.src(`${sharedPaths.imagesOutputFiles}/${sharedPaths.iconsFolderName}.svg`), {
             transform: function (filepath, file) {

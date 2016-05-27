@@ -25,7 +25,7 @@ module.exports = function () {
     return {
         srcDir,
         outputDir,
-        srcIndex: `${srcDir}/index.html`,
+        srcIndex: `${srcDir}/**/*.html`,
         imagesSrcFiles: [`${srcDir}/images/**/*.{jpg,png,gif,svg}`, `!${iconsSrcFiles}`],
         imagesOutputFiles: `${outputDir}/images`,
         iconsSrcFiles,
