@@ -2,7 +2,7 @@
     <img width="141" src="http://antonsamper.github.io/gulp-webpack-boilerplate/images/logo-gulp-webpack-pink-fed4617544.svg" />
 </p>
 #gulp.js + webpack boilerplate for single page apps
-A clean and simple starter ES6 boilerplate for single page applications using gulp.js and webpack.
+A clean and simple front-end ES6 boilerplate for single page applications using gulp.js and webpack.
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-webpack-boilerplate/blob/master/LICENSE)
 [![Travis](https://img.shields.io/travis/antonsamper/gulp-webpack-boilerplate.svg)](https://travis-ci.org/antonsamper/gulp-webpack-boilerplate)
