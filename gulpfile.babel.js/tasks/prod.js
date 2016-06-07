@@ -18,7 +18,6 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    process.env.GULP_COVERAGE = true;
     process.env.GULP_CSSO = true;
     process.env.GULP_HTMLMIN = true;
     process.env.GULP_UGLIFY = true;
@@ -28,8 +27,7 @@ export default () => {
         'styles',
         'webpack',
         ['minifyHtml', 'imagemin'],
-        'move',
-        'karma'
+        'move'
     );
 
 };
