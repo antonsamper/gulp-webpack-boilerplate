@@ -31,6 +31,7 @@ module.exports = config => {
         frameworks: ['jasmine'],
         files: [testFiles],
         browsers: ['Chrome'],
+        failOnEmptyTestSuite: false,
         preprocessors: {
             [testFiles]: ['webpack']
         },
