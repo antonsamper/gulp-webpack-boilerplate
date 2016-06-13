@@ -31,6 +31,7 @@ module.exports = function () {
         iconsSrcFiles,
         iconsFolderName,
         fontsSrcFiles: `${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`,
+        faviconFile: `${srcDir}/favicon.ico`,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
         scriptsOutputFiles: `${outputDir}/js/**/*.js`,
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],

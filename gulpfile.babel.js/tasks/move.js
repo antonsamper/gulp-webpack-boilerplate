@@ -21,7 +21,11 @@ import plumber      from 'gulp-plumber';
 
 export default () => {
     return gulp
-        .src(sharedPaths.fontsSrcFiles, {
+        .src([
+            sharedPaths.fontsSrcFiles,
+            sharedPaths.faviconFile
+        ], {
+
             base: sharedPaths.srcDir
         })
         .pipe(plumber({errorHandler: sharedEvents.onError}))
