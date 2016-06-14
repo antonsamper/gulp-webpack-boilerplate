@@ -1,7 +1,7 @@
 {
-    "name": "gulp-boilerplate",
+    "name": "gulp-webpack-boilerplate",
     "author": "Anton Samper Rivaya",
-    "description": "gulp.js Boilerplate",
+    "description": "gulp.js + webpack Boilerplate",
     "license": "MIT",
     "ignore": [
         "**/.*",
