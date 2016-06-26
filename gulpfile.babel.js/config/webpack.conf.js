@@ -8,7 +8,6 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import BowerWebpackPlugin from 'bower-webpack-plugin';
 import webpack from 'webpack';
 
 
@@ -26,21 +25,19 @@ export default (() => {
         module: {
             preLoaders: [{
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 loader: 'eslint'
             }],
             loaders: [{
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 loader: ['babel'],
                 query: {
                     presets: ['es2015']
                 }
             }]
         },
-        plugins: [new BowerWebpackPlugin({
-            includes: /\.js$/
-        })]
+        plugins: []
 
     };
 

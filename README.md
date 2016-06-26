@@ -22,7 +22,7 @@ A clean and simple front-end ES6 boilerplate for single page applications using 
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks, for example:
 
  ```
- $ npm i (bower components installed automatically)
+ $ npm i
  $ npm start
  ```
 
@@ -66,7 +66,6 @@ The default working directory for development is `src/`. This directory contains
 images used to create the front-end of the website.
 
 ```
-bower_components/
 dist/
 |- x.x.x/
 src/
@@ -127,21 +126,6 @@ For example:
 			|- helloWorld.spec.js
 			|- helloWorld.html
 			|- helloWorld.css
-```
-
-### Bower
-The boilerplate supports bower components and these will be installed in the default location `bower_components/`.
-If you install styles through bower, please add them to the manifest file e.g.:
-```
-// main.scss
-@import '../../bower_components/component-name/file';
-```
-
-If you install scripts, then these will be automatically picked up by webpack so all you have to do is import them 
-where ever you need them e.g.
-```
-// app.js
-import $ from 'jquery';
 ```
 
 ### Scss (SASS)
