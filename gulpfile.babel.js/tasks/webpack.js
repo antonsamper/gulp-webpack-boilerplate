@@ -24,7 +24,7 @@ import webpack       from 'webpack-stream';
 
 export default () => {
     return gulp
-        .src(`${sharedPaths.srcDir}/js/app.js`)
+        .src(`${sharedPaths.scriptsSrcDir}/${sharedPaths.scriptsMainFile}`)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
         .pipe(named())
         .pipe(webpack(webpackConfig))

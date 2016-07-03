@@ -20,7 +20,7 @@ module.exports = config => {
 
     let reporters = ['spec'];
     const basePath = `${__dirname}/../..`;
-    const testFiles = `${sharedPaths.srcDir}/js/**/*.spec.js`;
+    const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.js`;
 
     // Optional add coverage
     if (process.env.GULP_COVERAGE) reporters.push('coverage');
@@ -39,7 +39,7 @@ module.exports = config => {
             module: {
                 preLoaders: [{
                     test: /\.js$/,
-                    include: path.resolve(`${sharedPaths.srcDir}/js/`),
+                    include: path.resolve(sharedPaths.scriptsSrcDir),
                     exclude: /\.spec\.js$/,
                     loader: 'isparta'
                 }, {

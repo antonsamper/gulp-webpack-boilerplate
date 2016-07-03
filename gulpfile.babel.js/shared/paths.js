@@ -35,6 +35,7 @@ module.exports = function () {
         faviconFile: `${srcDir}/favicon.ico`,
         scriptsMainFile,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
+        scriptsSrcDir: `${srcDir}/js`,
         scriptsOutputDir: `${outputDir}/js`,
         scriptsOutputFiles: [`${outputDir}/js/**/*.js`, `!${outputDir}/js/${scriptsMainFile}`],
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],
