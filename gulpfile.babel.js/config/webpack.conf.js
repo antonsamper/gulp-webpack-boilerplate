@@ -8,7 +8,9 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import webpack from 'webpack';
+import sharedPaths from '../shared/paths.js';
+import path        from 'path';
+import webpack     from 'webpack';
 
 
 /*********************************************************************************
@@ -17,10 +19,12 @@ import webpack from 'webpack';
 
 export default (() => {
 
+    const vendorChunkFilename = 'libs';
+
     let config = {
         cache: true,
         output: {
-            filename: '[name].min.js'
+            filename: '[name].js'
         },
         module: {
             preLoaders: [{
@@ -38,20 +42,27 @@ export default (() => {
             }]
         },
         plugins: []
-
     };
-
-    // Development extras
-    if (process.env.GULP_WEBPACK_DEV === 'true') {
-        config.debug = true;
-        config.devtool = 'inline-source-map';
-    }
 
     if (process.env.GULP_UGLIFY === 'true') {
         config.plugins.push(new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,
             mangle: true,
             comments: false
+        }));
+    }
+
+    // Development extras
+    if (process.env.GULP_WEBPACK_DEV === 'true') {
+        config.debug = true;
+        config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
+            name: `${vendorChunkFilename}`,
+            minChunks: function (module, count) {
+                return module.resource && module.resource.indexOf(path.resolve(sharedPaths.srcDir)) === -1;
+            }
+        }));
+        config.plugins.push(new webpack.SourceMapDevToolPlugin({
+            exclude: `${vendorChunkFilename}.js`
         }));
     }
 

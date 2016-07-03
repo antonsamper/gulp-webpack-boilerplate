@@ -21,6 +21,7 @@ module.exports = function () {
     const outputDir = `dist/${packagejson.version}`;
     const iconsFolderName = 'icons';
     const iconsSrcFiles = `${srcDir}/images/${iconsFolderName}/*.svg`;
+    const scriptsMainFile = 'app.js';
 
     return {
         srcDir,
@@ -32,10 +33,11 @@ module.exports = function () {
         iconsFolderName,
         fontsSrcFiles: `${srcDir}/fonts/**/*.{eot,svg,ttf,woff,woff2}`,
         faviconFile: `${srcDir}/favicon.ico`,
+        scriptsMainFile,
         scriptsSrcFiles: `${srcDir}/js/**/*.js`,
-        scriptsOutputFiles: `${outputDir}/js/**/*.js`,
-        outputFiles: [`${outputDir}/**/*.{html,css,js}`],
         scriptsOutputDir: `${outputDir}/js`,
+        scriptsOutputFiles: [`${outputDir}/js/**/*.js`, `!${outputDir}/js/${scriptsMainFile}`],
+        outputFiles: [`${outputDir}/**/*.{html,css,js}`],
         stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],
         stylesAllSrcFiles: [`${srcDir}/sass/**/*.scss`],
         stylesSrcGeneratedDir: `${srcDir}/sass/generated`,

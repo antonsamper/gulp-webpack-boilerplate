@@ -17,6 +17,7 @@ import gulpif       from 'gulp-if';
 import inject       from 'gulp-inject';
 import plumber      from 'gulp-plumber';
 import runSequence  from 'run-sequence';
+import series       from 'stream-series';
 
 
 /*********************************************************************************
@@ -24,15 +25,15 @@ import runSequence  from 'run-sequence';
  *********************************************************************************/
 
 gulp.task('html', () => {
+
+    const styles = gulp.src([sharedPaths.stylesOutputFiles], {read: false});
+    const scriptsLibs = gulp.src(sharedPaths.scriptsOutputFiles, {read: false});
+    const scriptsMain = gulp.src([`${sharedPaths.scriptsOutputDir}/${sharedPaths.scriptsMainFile}`], {read: false});
+
     return gulp
         .src(sharedPaths.srcIndex)
         .pipe(plumber({errorHandler: sharedEvents.onError}))
-        .pipe(inject(gulp.src([
-            sharedPaths.stylesOutputFiles,
-            sharedPaths.scriptsOutputFiles
-        ], {
-            read: false
-        }), {
+        .pipe(inject(series(styles, scriptsLibs, scriptsMain), {
             ignorePath: sharedPaths.outputDir,
             addRootSlash: false
         }))
