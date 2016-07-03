@@ -13,7 +13,7 @@ import fibonacci from './components/fibonacci/fibonacci';
 import helloWorld from './components/helloWorld/helloWorld';
 
 // helloWorld example
-helloWorld();
+console.log(helloWorld());
 
 // fibonacci example
 for (let n of fibonacci) {
@@ -21,5 +21,5 @@ for (let n of fibonacci) {
     console.log(`fibonacci sequence number: ${n}`);
 }
 
-// jquery selector sample
+// jQuery selector sample
 console.log($('body'));
