@@ -114,12 +114,14 @@ any of the following extensions: `.jpg` `.png` `.gif` `.svg`
 
 ### JS
 All the scripts should be placed inside the `src/js/` folder. These files will all be linted. The current setup assumes 
-a component based approach for features/functionality so that everything is inside of its own folder - this can include 
+`app.js` is the main bundle/manifest file (this is referenced in `paths.js`) and a component based approach for 
+features/functionality so that everything is inside of its own folder - this can include 
 tests, templates and specific styles if needed. 
 For example:
 
 ```
 |- js/
+    |- app.js
 	|- components/
 		|- helloWorld/
 			|- helloWorld.js
