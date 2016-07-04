@@ -40,7 +40,7 @@ module.exports = function () {
         scriptsOutputFiles: [`${outputDir}/js/**/*.js`, `!${outputDir}/js/${scriptsMainFile}`],
         outputFiles: [`${outputDir}/**/*.{html,css,js}`],
         stylesMainSrcFiles: [`${srcDir}/sass/*.scss`],
-        stylesAllSrcFiles: [`${srcDir}/sass/**/*.scss`],
+        stylesAllSrcFiles: [`${srcDir}/**/*.scss`],
         stylesSrcGeneratedDir: `${srcDir}/sass/generated`,
         stylesOutputFiles: `${outputDir}/css/*.css`,
         stylesOutputDir: `${outputDir}/css`
